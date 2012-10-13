@@ -1,0 +1,12 @@
+$def with (banners)
+
+<h1>Banners</h1>
+
+<ul>
+$for banner in banners:
+    <li>
+        <!-- <a href="/view/$banner.id">#$banner.id</a> -->
+        [$banner.medium] [$banner.zone] <a href="$banner.file"><img src="$banner.file" width="40"></a>
+        <a href="/edit/$banner.id">Editar</a>
+    </li>
+</ul>
