@@ -1,12 +1,13 @@
 $def with (banners)
 
-<h1>Banners</h1>
+<h1>Banners $:medium</h1>
 
 <ul>
 $for banner in banners:
     <li>
         <!-- <a href="/view/$banner.id">#$banner.id</a> -->
-        [$banner.medium] [$banner.zone] <a href="$banner.file"><img src="$banner.file" width="40"></a>
-        <a href="/edit/$banner.id">Editar</a>
+        [$banner.zone] <a href="$banner.file"><img src="/$banner.file" width="40"></a>
+        <small>Link: $banner.link</small>
+        <a href="/$:medium/edit/$banner.id">Editar</a>
     </li>
 </ul>

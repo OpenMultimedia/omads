@@ -1,4 +1,4 @@
-$def with (banner, form)
+$def with (medium, banner, form)
 
 <h1>Editar banner</h1>
 
@@ -10,6 +10,6 @@ $:form.render()
 
 
 <h2>Eliminar banner</h2>
-<form action="/delete/$banner.id" method="post">
+<form action="/$medium/delete/$banner.id" method="post">
     <input type="submit" value="Eliminar banner"/>
 </form>

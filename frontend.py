@@ -1,6 +1,10 @@
-from random import randint
+import os, sys
+projectdir = os.path.dirname(__file__)
+sys.path.append(projectdir)
+
 import web
 import model
+
 
 urls = (
     '/(.+)/(.+)/', 'banners',
@@ -13,9 +17,9 @@ class banners:
         try:
             banner = model.get_delivery_banner(medium, zone)
             if not banner:
-                return 'a'
+                return web.notfound()
                 
-            banner_html = '<img style="border:0;" src="/static/%s" />' % (banner.file)
+            banner_html = '<img style="border:0;" src="/%s" />' % (banner.file)
             if banner.link:
                 banner_html = '<a href="%s">%s</a>' % (banner.link, banner_html)
             return '<html><body class="banner-%s" style="margin:0;">%s</body></html>' % (banner.id, banner_html)
@@ -26,7 +30,7 @@ class default:
     def GET(self):
         return '<html></html>'
 
-application = web.application(urls, globals())
+application = web.application(urls, globals()).wsgifunc()
 
-if __name__ == '__main__':
-    application.run()
+#if __name__ == '__main__':
+#    application.run()
