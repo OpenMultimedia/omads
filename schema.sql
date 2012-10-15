@@ -1,8 +1,11 @@
 CREATE TABLE banner (
-    id integer primary key,
-    medium varchar(20),
-    zone varchar(2),
-    file varchar(255),
-    link varchar(255),
-    created_at datetime
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    medium VARCHAR(20),
+    zone VARCHAR(2),
+    file VARCHAR(255),
+    link VARCHAR(255),
+    created_at DATETIME,
+    clicks INT(11),
+    views INT(11),
+    PRIMARY KEY (id)
 );
