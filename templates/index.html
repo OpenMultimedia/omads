@@ -1,9 +1,11 @@
-$def with (banners)
+$def with (banners, zone)
 
 $code:
+    last_zone = None
     def rate(banner):
-        try: return '%.2g' % (float(banner.clicks)/float(banner.views))
-        except: return 0
+        if banner.views:
+            return '%.2g' % (float(banner.clicks)/float(banner.views))
+        return 0
 
 <h1>Banners $:medium</h1>
 
@@ -17,40 +19,60 @@ $code:
     th {
         background: lightgray;
     }
+    
+    ul.zone_filter li {
+        list-style: none;
+        display: inline;
+        margin-right: 1.2em;
+    }
+    ul.zone_filter a {white-space: nowrap;}
+    
+    table a {
+        display: block;
+    }
 </style>
 
-<ul>
-    <li>
-        <a href="/$:medium">Todo</a>
+<ul class="zone_filter">
+    <li class="todo">
+        $if zone != '':
+            <a href="/$:medium">TODO</a>
+        $else:
+            TODO
     </li>
     $for z in zones:
-        <li>
-            <a href="/$:medium?zone=$z[0]">Zona $z[1]</a> [<a href="http://ad.openmultimedia.biz/$:medium/$z[0]/">ver zona</a>]
+        <li class="$z[0]">
+            $if zone != z[0]:
+                <a href="/$:medium?zone=$z[0]">Zona $z[1]</a>
+            $else:
+                Zona $z[1]
         </li>
 </ul>
 
 <table cellspacing="0">
-    <thead>
+    
+$for banner in banners:
+    $if last_zone != banner.zone:
         <tr>
             <th>Zona</th>
+            <th>Subzona</th>
             <th>Banner</th>
-            <th style="width: 200px;">Link</th>
+            <th>Link</th>
             <th>Colocación</th>
             <th>Impresiones</th>
             <th>Clicks</th>
             <th>clicks/impresión</th>
             <th>Acciones</th>
         </tr>
-    </thead>
+    $ last_zone = banner.zone
     
-$for banner in banners:
-    <tr>
-        <th><strong><big>$banner.zone</big></strong></th>
+    <tr class="$banner.zone">
+        <th><strong><big><a href="http://ad.openmultimedia.biz/$:medium/$banner.zone/">$banner.zone</a></big></strong></th>
+        <th><strong><big><a href="http://ad.openmultimedia.biz/$:medium/$banner.zone/$banner.subzone/">$banner.subzone</a></big></strong></th>
         <td><a href="$banner.file"><img src="/$banner.file" style="max-width:100px; max-height:100px;"></a></td>
-        <td><small><a href="$banner.link" target="_blank">$banner.link</a></small></td>
+        <td style="max-width: 250px; word-wrap:break-word;"><small><a href="$banner.link" target="_blank">$banner.link</a></small></td>
         <td>$banner.created_at</td>
-        <td>$banner.views</td>
-        <td>$banner.clicks</td>
+        <td>$:formatWithCommas('%i', banner.views)</td>
+        <td>$:formatWithCommas('%i', banner.clicks)</td>
         <td>$rate(banner)</td>
         <td><a href="/$:medium/edit/$banner.id">Editar</a>
     </tr>

@@ -1,15 +1,12 @@
-import os, sys
-projectdir = os.path.dirname(__file__)
-sys.path.append(projectdir)
-
 import web, datetime
 
 db = web.database(dbn='mysql', db='omads_data', user='root', pw='pass')
 #db = web.database(dbn='sqlite', db=projectdir + '/db')
 
-def get_banners(medium, zone=''):
+def get_banners(medium, zone='', subzone=''):
     and_where = ' AND zone=$zone' if zone else ''
-    return db.select('banner', where='medium=$medium'+and_where, order='medium, zone, id DESC', vars=locals())
+    if subzone: and_where+= ' AND subzone=$subzone'
+    return db.select('banner', where='medium=$medium'+and_where, order='medium, zone, subzone, id', vars=locals())
 
 def get_banner(medium, id):
     try:
@@ -17,16 +14,18 @@ def get_banner(medium, id):
     except IndexError:
         return None
         
-def get_delivery_banner(medium, zone):
+def get_delivery_banner(medium, zone, subzone=''):
     try:
-        return db.select('banner', where='medium=$medium AND zone=$zone', order='RAND ()', limit=1, vars=locals())[0]
+        and_where = ' AND subzone=$subzone' if subzone else ''
+        return db.select('banner', where='medium=$medium AND zone=$zone'+and_where, order='RAND ()', limit=1, vars=locals())[0]
     except IndexError:
         return None
 
-def new_banner(medium, zone, file, link):
-    db.insert('banner', medium=medium, zone=zone, file=file, link=link, created_at=datetime.datetime.utcnow())
+def new_banner(medium, zone, file, link='', subzone=''):
+    db.insert('banner', medium=medium, zone=zone, subzone=subzone, file=file, link=link, created_at=datetime.datetime.utcnow())
 
 def del_banner(medium, id):
+    import os
     try:
         banner = db.select('banner', where='medium=$medium AND id=$id', vars=locals())[0]
         db.delete('banner', where='medium=$medium AND id=$id', vars=locals())
@@ -34,9 +33,9 @@ def del_banner(medium, id):
     except:
         pass
 
-def update_banner(medium, id, zone, file, link):
+def update_banner(medium, id, zone, file, link='', subzone=''):
     db.update('banner', where="medium=$medium AND id=$id", vars=locals(),
-       zone=zone, file=file, link=link)
+       zone=zone, file=file, link=link, subzone=subzone)
 
 def increment_banner_click_count(medium, id):
     db.query('UPDATE banner SET clicks = (clicks + 1) WHERE medium=$medium AND id=$id', vars=locals());

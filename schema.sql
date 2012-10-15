@@ -2,6 +2,7 @@ CREATE TABLE banner (
     id INT(11) NOT NULL AUTO_INCREMENT,
     medium VARCHAR(20),
     zone VARCHAR(2),
+    subzone VARCHAR(10),
     file VARCHAR(255),
     link VARCHAR(255),
     created_at DATETIME,

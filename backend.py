@@ -1,14 +1,11 @@
 """ OMAds backend """
 import os, sys
-projectdir = os.path.dirname(__file__)
-sys.path.append(projectdir)
+sys.path.append(os.path.dirname(__file__))
 
+from settings import *
 import web
 import model
-
-### Url mappings
-
-MEDIA_RE = 'telesur|vtv'
+from utils import *
 
 urls = (
     '/(%s)' % MEDIA_RE, 'Index',
@@ -18,10 +15,12 @@ urls = (
     '/(%s)/edit/(\d+)' % MEDIA_RE, 'Edit',
 )
 
-ZONES = (('A', 'A (300x600)'), ('B', 'B (300x250)'), ('C', 'C (468x60)' ), ('D', 'D (728x90)'), ('E', 'E (234x60)'))
-
 def get_render(medium):
-    return web.template.render(projectdir + '/templates', base='base', globals={'medium': medium, 'zones': ZONES})
+    return web.template.render(PROJECT_DIR + '/templates', base='base', globals={
+        'medium': medium,
+        'zones': ZONES,
+        'formatWithCommas': formatWithCommas, 
+    })
 
 class Index:
 
@@ -29,7 +28,7 @@ class Index:
         """ View banner list """
         zone = web.input().zone if 'zone' in web.input() else ''
         banners = model.get_banners(medium, zone)
-        return get_render(medium).index(banners)
+        return get_render(medium).index(banners, zone)
 
 
 class View:
@@ -48,6 +47,8 @@ def get_zone_for_file(file_image):
         if s[0] == 468 and s[1] == 60: return 'C'
         if s[0] == 728 and s[1] == 90: return 'D'
         if s[0] == 234 and s[1] == 60: return 'E'
+        if s[0] == 300 and s[1] == 50: return 'F'
+        if s[0] == 220 and s[1] == 70: return 'G'
         return ''
     except:
         return ''
@@ -58,6 +59,7 @@ class New:
         #web.form.Dropdown('medium', args=('telesur', 'vtv'), description="Medio:"),
         web.form.File('file', description="Archivo:"),
         web.form.Dropdown('zone', args=(('auto', 'Determinar por archivo'), ('', 'Sin Zona')) + ZONES, description="Zona:"),
+        web.form.Dropdown('subzone', args=(['',] + [str(x) for x in range(1, 20)]), description="Sub-zona:"),
         web.form.Textbox('link', size=50, description="Link:"),
         web.form.Button('Guardar'),
     )
@@ -74,17 +76,17 @@ class New:
             return get_render(medium).new(form)
 
         filename='static/%s.jpg' % uuid.uuid4()
-        path = '%s/%s' % (projectdir, filename)
-        fout = open(path, 'w') # creates the file where the uploaded file should be stored
-        fout.write(x.file.file.read()) # writes the uploaded file to the newly created file.
-        fout.close() # closes the file, upload complete.
+        path = '%s/%s' % (PROJECT_DIR, filename)
+        fout = open(path, 'w')
+        fout.write(x.file.file.read())
+        fout.close()
         
         if form.d.zone == 'auto':
             zone = get_zone_for_file(open(path, 'r'))
         else:
             zone = form.d.zone
 
-        model.new_banner(medium, zone, filename, form.d.link)
+        model.new_banner(medium, zone, filename, form.d.link, form.d.subzone)
         raise web.seeother('/%s' % medium)
 
 
@@ -106,6 +108,7 @@ class Edit:
 
     def POST(self, medium, id):
         import uuid
+        
         form = New.form()
         x = web.input(file={})
         banner = model.get_banner(medium, int(id))
@@ -115,24 +118,26 @@ class Edit:
         if 'file' in x and x.file.filename:
             image_file = x.file.file
             filename='static/%s.jpg' % uuid.uuid4()
-            fout = open(projectdir + '/' + filename, 'w') # creates the file where the uploaded file should be stored
-            fout.write(image_file.read()) # writes the uploaded file to the newly created file.
-            fout.close() # closes the file, upload complete.
-            if os.path.exists(projectdir + '/' + banner.file):
-                os.remove(projectdir + '/' + banner.file)
+            fout = open(PROJECT_DIR + '/' + filename, 'w')
+            fout.write(image_file.read())
+            fout.close()
+            if os.path.exists(PROJECT_DIR + '/' + banner.file):
+                os.remove(PROJECT_DIR + '/' + banner.file)
         else:
             image_file = None
             filename = banner.file
         
         if form.d.zone == 'auto':
-            zone = get_zone_for_file(image_file or open(projectdir + '/' + filename, 'r'))
+            zone = get_zone_for_file(image_file or open(PROJECT_DIR + '/' + filename, 'r'))
         else:
             zone = form.d.zone
             
-        model.update_banner(medium, int(id), zone, filename, form.d.link)
+        model.update_banner(medium, int(id), zone, filename, form.d.link, form.d.subzone)
         raise web.seeother('/%s' % medium)
 
 
-
 application = web.application(urls, globals()).wsgifunc()
+# if __name__ == '__main__':
+#     app = web.application(urls, globals())
+#     app.run()
 
