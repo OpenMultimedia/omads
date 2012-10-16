@@ -3,8 +3,19 @@ import os, sys
 
 PROJECT_DIR = os.path.dirname(__file__)
 
+# TODO: integrate media to application logic, for instance in a db table
+# media sites or client separation
 MEDIA_RE = 'telesur|vtv|cienciasalud'
 
+# MySQL database connection
+DB = {
+    'host': 'localhost',
+    'name': 'omads_data',
+    'user': 'root',
+    'pass':  'pass',
+}
+
+# Zone configuration bassed on banners' size
 ZONES = (
     ('A', 300, 600),
     ('B', 300, 250),
@@ -15,10 +26,8 @@ ZONES = (
     ('G', 220, 70),
 )
 
-# MySQL db access
-DB = {
-    'host': 'localhost',
-    'name': 'omads_data',
-    'user': 'root',
-    'pass':  'pass',
-}
+# time to cache banner query. Higher values improves performance but reduces randomness
+BANNER_CACHE_SECONDS = 1
+
+# time interval to store banner views count from memoery to database
+SOTRE_VIEWS_INTERVAL_SECONDS = 30

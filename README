@@ -1,1 +1,9 @@
-General purpose multi-client and multi-zone ad rotation application written in web.py
+General purpose multi-client and multi-zone ad rotation app written in web.py
+
+
+How to run:
+
+# python backend.py
+# pyrhon frontend.py
+
+For production point a WSGI enabled web server to frontend.py and/or backend.py

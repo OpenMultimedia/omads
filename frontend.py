@@ -15,9 +15,6 @@ urls = (
     '/(.+)/(.+)/', 'Banners',
 )
 
-BANNER_CACHE_SECONDS = 1
-SOTRE_VIEWS_INTERVAL_SECONDS = 30
-
 class Banners:
     def GET(self, medium, zone, subzone=''):
         # memcached connection and keys
@@ -61,7 +58,9 @@ class Click:
         
         raise web.seeother(banner.link)
 
-application = web.application(urls, globals()).wsgifunc()
-# if __name__ == '__main__':
-#     app = web.application(urls, globals())
-#     app.run()
+
+if __name__ == '__main__':
+    app = web.application(urls, globals())
+    app.run()
+else:
+    application = web.application(urls, globals()).wsgifunc()

@@ -134,8 +134,8 @@ class Edit:
         raise web.seeother('/%s' % medium)
 
 
-application = web.application(urls, globals()).wsgifunc()
-# if __name__ == '__main__':
-#     app = web.application(urls, globals())
-#     app.run()
-
+if __name__ == '__main__':
+    app = web.application(urls, globals())
+    app.run()
+else:
+    application = web.application(urls, globals()).wsgifunc()

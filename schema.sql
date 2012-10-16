@@ -1,6 +1,6 @@
 CREATE TABLE banner (
     id INT(11) NOT NULL AUTO_INCREMENT,
-    medium VARCHAR(20),
+    medium VARCHAR(50) NOTNULL,
     zone VARCHAR(2),
     subzone VARCHAR(10) DEFAULT '',
     file VARCHAR(255),
