@@ -26,8 +26,8 @@ ZONES = (
     ('G', 220, 70),
 )
 
-# time to cache banner query. Higher values improves performance but reduces randomness
+# time to cache banner query. A higher value improves performance but reduces randomness
 BANNER_CACHE_SECONDS = 1
 
-# time interval to store banner views count from memoery to database
+# time interval to store banner views count from memory to database.
 SOTRE_VIEWS_INTERVAL_SECONDS = 30
