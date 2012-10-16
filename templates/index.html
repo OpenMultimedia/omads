@@ -50,6 +50,9 @@ $code:
 
 <table cellspacing="0">
     
+$if not banners:
+    <h2>Ningún banner a mostrar</h2>
+    
 $for banner in banners:
     $if last_zone != banner.zone:
         <tr>
@@ -57,10 +60,11 @@ $for banner in banners:
             <th>Subzona</th>
             <th>Banner</th>
             <th>Link</th>
+            <th>Peso</th>
             <th>Colocación</th>
             <th>Impresiones</th>
             <th>Clicks</th>
-            <th>clicks/impresión</th>
+            <!-- <th>clicks/impresión</th> -->
             <th>Acciones</th>
         </tr>
     $ last_zone = banner.zone
@@ -70,10 +74,11 @@ $for banner in banners:
         <th><strong><big><a href="http://ad.openmultimedia.biz/$:medium/$banner.zone/$banner.subzone/">$banner.subzone</a></big></strong></th>
         <td><a href="$banner.file"><img src="/$banner.file" style="max-width:100px; max-height:100px;"></a></td>
         <td style="max-width: 250px; word-wrap:break-word;"><small><a href="$banner.link" target="_blank">$banner.link</a></small></td>
+        <td>$banner.weight</td>
         <td>$banner.created_at</td>
         <td>$:formatWithCommas('%i', banner.views)</td>
         <td>$:formatWithCommas('%i', banner.clicks)</td>
-        <td>$rate(banner)</td>
+        <!-- <td>$rate(banner)</td> -->
         <td><a href="/$:medium/edit/$banner.id">Editar</a>
     </tr>
 

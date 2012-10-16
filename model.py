@@ -17,12 +17,13 @@ def get_banner(medium, id):
 def get_delivery_banner(medium, zone, subzone=''):
     try:
         and_where = ' AND subzone=$subzone' if subzone else ''
-        return db.select('banner', where='medium=$medium AND zone=$zone'+and_where, order='RAND ()', limit=1, vars=locals())[0]
+        #return db.select('banner', where='medium=$medium AND zone=$zone'+and_where, order='RAND ()', limit=1, vars=locals())[0]
+        return db.query('SELECT *, (RAND() * weight) AS SCORE FROM banner WHERE medium=$medium AND zone=$zone '+ and_where +' ORDER BY SCORE DESC LIMIT 1', vars=locals())[0];
     except IndexError:
         return None
 
-def new_banner(medium, zone, file, link='', subzone=''):
-    db.insert('banner', medium=medium, zone=zone, subzone=subzone, file=file, link=link, created_at=datetime.datetime.utcnow())
+def new_banner(medium, zone, file, link='', weight=50, subzone=''):
+    db.insert('banner', medium=medium, zone=zone, subzone=subzone, file=file, link=link, weight=weight, created_at=datetime.datetime.utcnow())
 
 def del_banner(medium, id):
     import os
@@ -33,9 +34,9 @@ def del_banner(medium, id):
     except:
         pass
 
-def update_banner(medium, id, zone, file, link='', subzone=''):
+def update_banner(medium, id, zone, file, link='', weight=50, subzone=''):
     db.update('banner', where="medium=$medium AND id=$id", vars=locals(),
-       zone=zone, file=file, link=link, subzone=subzone)
+       zone=zone, file=file, link=link, weight=weight, subzone=subzone)
 
 def increment_banner_click_count(medium, id):
     db.query('UPDATE banner SET clicks = (clicks + 1) WHERE medium=$medium AND id=$id', vars=locals());

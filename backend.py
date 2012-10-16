@@ -61,6 +61,7 @@ class New:
         web.form.Dropdown('zone', args=(('auto', 'Determinar por archivo'), ('', 'Sin Zona')) + ZONES, description="Zona:"),
         web.form.Dropdown('subzone', args=(['',] + [str(x) for x in range(1, 20)]), description="Sub-zona:"),
         web.form.Textbox('link', size=50, description="Link:"),
+        web.form.Dropdown('weight', args=range(0, 100, 10), description="Peso:"),
         web.form.Button('Guardar'),
     )
 
@@ -86,7 +87,7 @@ class New:
         else:
             zone = form.d.zone
 
-        model.new_banner(medium, zone, filename, form.d.link, form.d.subzone)
+        model.new_banner(medium, zone, filename, form.d.link, form.d.weight, form.d.subzone)
         raise web.seeother('/%s' % medium)
 
 
@@ -132,7 +133,7 @@ class Edit:
         else:
             zone = form.d.zone
             
-        model.update_banner(medium, int(id), zone, filename, form.d.link, form.d.subzone)
+        model.update_banner(medium, int(id), zone, filename, form.d.link, form.d.weight, form.d.subzone)
         raise web.seeother('/%s' % medium)
 
 

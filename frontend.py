@@ -14,7 +14,7 @@ urls = (
     '/(.+)/(.+)/', 'Banners',
 )
 
-BANNER_CACHE_SECONDS = 2
+BANNER_CACHE_SECONDS = 1
 SOTRE_VIEWS_INTERVAL_SECONDS = 30
 
 class Banners:
