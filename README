@@ -3,7 +3,11 @@ General purpose multi-client and multi-zone ad rotation app written in web.py
 
 How to run:
 
+- Edit settings.py
+
+Debug:
 # python backend.py
 # pyrhon frontend.py
 
-For production point a WSGI enabled web server to frontend.py and/or backend.py
+Production:
+Point a WSGI enabled web server to frontend.py and/or backend.py
