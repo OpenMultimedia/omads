@@ -1,6 +1,6 @@
 $def with (banners, zone)
 
-<h1>Banners</h1>
+<h2>Lista de banners</h2>
 
 <style type="text/css">
     td, th {
@@ -63,9 +63,9 @@ $def with (banners, zone)
     $for z in zones:
         <li class="$z[0]">
             $if zone != z[0]:
-                <a href="/$:medium?zone=$z[0]">Zona $z[1]</a>
+                <a href="/$:medium?zone=$z[0]">Zona $z[0] ($z[1]x$z[2])</a>
             $else:
-                Zona $z[1]
+                Zona $z[0] ($z[1]x$z[2])
         </li>
 </ul>
 

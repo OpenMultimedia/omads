@@ -6,11 +6,19 @@ PROJECT_DIR = os.path.dirname(__file__)
 MEDIA_RE = 'telesur|vtv|cienciasalud'
 
 ZONES = (
-    ('A', 'A (300x600)'),
-    ('B', 'B (300x250)'),
-    ('C', 'C (468x60)' ),
-    ('D', 'D (728x90)'),
-    ('E', 'E (234x60)'),
-    ('F', 'F (300x50)'),
-    ('G', 'G (220x70)'),
+    ('A', 300, 600),
+    ('B', 300, 250),
+    ('C', 468, 60),
+    ('D', 728, 90),
+    ('E', 234, 60),
+    ('F', 300, 50),
+    ('G', 220, 70),
 )
+
+# MySQL db access
+DB = {
+    'host': 'localhost',
+    'name': 'omads_data',
+    'user': 'root',
+    'pass':  'pass',
+}

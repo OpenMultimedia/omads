@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*- #
+from settings import *
 import web, datetime
 
-db = web.database(dbn='mysql', db='omads_data', user='root', pw='pass')
-#db = web.database(dbn='sqlite', db=projectdir + '/db')
+db = web.database(dbn='mysql', host=DB['host'], db=DB['name'], user=DB['user'], pw=DB['pass'])
 
 def get_banners(medium, zone='', subzone=''):
     and_where = ' AND zone=$zone' if zone else ''
