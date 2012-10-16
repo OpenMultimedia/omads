@@ -1,8 +1,9 @@
+# -*- coding: utf-8 -*- #
 import os, sys
 
 PROJECT_DIR = os.path.dirname(__file__)
 
-MEDIA_RE = 'telesur|vtv'
+MEDIA_RE = 'telesur|vtv|cienciasalud'
 
 ZONES = (
     ('A', 'A (300x600)'),

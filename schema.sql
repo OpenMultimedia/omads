@@ -5,6 +5,7 @@ CREATE TABLE banner (
     subzone VARCHAR(10) DEFAULT '',
     file VARCHAR(255),
     link VARCHAR(255) DEFAULT '',
+    link_mode int(11) DEFAULT 0,
     created_at DATETIME,
     clicks INT(11) DEFAULT 0,
     views INT(11) DEFAULT 0,

@@ -1,8 +1,12 @@
 $def with (page)
 
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Banners</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- <link rel="stylesheet" href="/static/resources/screen.css" type="text/css" media="screen" title="default" />     -->
+    <title>Banners | $:medium</title>
+    
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -19,14 +23,19 @@ $def with (page)
         a:hover {
             color: #FF0000;
         }
+        h1.medium {
+            text-transform: uppercase;
+        }
     </style>
 </head>
 <body>
 
 <ul id="menu">
-    <li><a href="/$:medium">Listado de banners</a></li>
+    <li><a href="/$:medium">Mostrar banners</a></li>
     <li><a href="/$:medium/new">Agregar banner</a></li>
 </ul>
+
+<h1 class="medium">$:medium</h1>
 
 $:page
 

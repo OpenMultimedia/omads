@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*- #
 """ OMAds frontend """
 import os, sys
 sys.path.append(os.path.dirname(__file__))
@@ -46,7 +47,8 @@ class Banners:
         
         # build response
         banner_html = '<img style="border:0;" src="/%s" />' % (banner.file)
-        if banner.link: banner_html = '<a href="/%s/%s/%s/click/" target="_top">%s</a>' % (banner.medium, banner.zone, banner.id, banner_html)
+        target = '_top' if banner.link_mode == 0 else '_blank'
+        if banner.link: banner_html = '<a href="/%s/%s/%s/click/" target="%s">%s</a>' % (banner.medium, banner.zone, banner.id, target, banner_html)
         web.header("Content-Type","text/html; charset=utf-8")
         
         return '<html><body class="banner-%s" style="margin:0;">%s</body></html>' % (banner.id, banner_html)

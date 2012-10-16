@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*- #
 import web, datetime
 
 db = web.database(dbn='mysql', db='omads_data', user='root', pw='pass')
@@ -22,8 +23,8 @@ def get_delivery_banner(medium, zone, subzone=''):
     except IndexError:
         return None
 
-def new_banner(medium, zone, file, link='', weight=50, subzone=''):
-    db.insert('banner', medium=medium, zone=zone, subzone=subzone, file=file, link=link, weight=weight, created_at=datetime.datetime.utcnow())
+def new_banner(medium, zone, file, link='', link_mode=0, weight=50, subzone=''):
+    db.insert('banner', medium=medium, zone=zone, subzone=subzone, file=file, link=link, link_mode=link_mode, weight=weight, created_at=datetime.datetime.utcnow())
 
 def del_banner(medium, id):
     import os
@@ -34,9 +35,9 @@ def del_banner(medium, id):
     except:
         pass
 
-def update_banner(medium, id, zone, file, link='', weight=50, subzone=''):
+def update_banner(medium, id, zone, file, link='', link_mode=0, weight=50, subzone=''):
     db.update('banner', where="medium=$medium AND id=$id", vars=locals(),
-       zone=zone, file=file, link=link, weight=weight, subzone=subzone)
+       zone=zone, file=file, link=link, link_mode=link_mode, weight=weight, subzone=subzone)
 
 def increment_banner_click_count(medium, id):
     db.query('UPDATE banner SET clicks = (clicks + 1) WHERE medium=$medium AND id=$id', vars=locals());
