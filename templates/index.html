@@ -98,7 +98,14 @@ $for banner in banners:
         <th class="zone"><a href="http://ad.openmultimedia.biz/$:medium/$banner.zone/">$banner.zone</a></big></strong></th>
         <th class="subzone"><a href="http://ad.openmultimedia.biz/$:medium/$banner.zone/$banner.subzone/">$banner.subzone</a></big></strong></th>
         <td class="weight">$banner.weight</td>
-        <td class="file"><a href="$banner.file"><img src="/$banner.file"></a></td>
+        <td class="file">
+            $if banner_get_type(banner) == 'image':
+                <a href="$banner.file"><img src="/$banner.file"></a>
+            $if banner_get_type(banner) == 'video':
+                <a href="$banner.file"><img src="/${banner.file}.jpg"></a>
+            $if banner_get_type(banner) == 'flash':
+                <a href="$banner.file"><img src="/$banner.file"></a>
+        </td>
         <td class="link">
             $if banner.link:
                 <a href="$banner.link" target="_blank">$banner.link</a>

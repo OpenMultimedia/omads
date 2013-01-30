@@ -20,7 +20,8 @@ def get_render(medium):
     return web.template.render(PROJECT_DIR + '/templates', base='base', globals={
         'medium': medium,
         'zones': ZONES,
-        'formatWithCommas': formatWithCommas, 
+        'formatWithCommas': formatWithCommas,
+        'banner_get_type': model.banner_get_type, 
     })
     
 VE_STATES = (
@@ -120,8 +121,9 @@ class New:
         fout.write(x.file.file.read())
         fout.close()
                 
-        if uploadedExtension in VIDEO_FILE_EXNTENSIONS and uploadedExtension != '.flv':
+        if uploadedExtension in VIDEO_FILE_EXTENSIONS and uploadedExtension != '.flv':
             call('ffmpeg -i %s -f flv - | flvtool2 -U stdin %s.flv' % (path, path), shell=True)
+            call('ffmpeg -i %s.flv -r 1 -f image2 -ss 00:00:05 %s.flv.jpg' % (path, path), shell=True)
             os.remove(path)
             filename = '%s.flv' % filename 
             path = '%s.flv' % path

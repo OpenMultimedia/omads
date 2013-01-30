@@ -26,7 +26,7 @@ ZONES = (
     ('G', 220, 70),
 )
 
-VIDEO_FILE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif']
+IMAGE_FILE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif']
 VIDEO_FILE_EXTENSIONS = ['.flv', '.mp4', '.mpg', '.avi', '.mov']
 FLASH_FILE_EXTENSIONS = ['.swf']
 
