@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Sweet Dreams - Widgets</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/jquery-ui-1.8.16.custom.css" media="screen"  />
+    <link rel="stylesheet" href="css/fullcalendar.css" media="screen"  />
+    <link rel="stylesheet" href="css/chosen.css" media="screen"  />
+    <link rel="stylesheet" href="css/datepicker.css" >
+    <link rel="stylesheet" href="css/colorpicker.css">
+    <link rel="stylesheet" href="css/glisse.css?1.css">
+    <link rel="stylesheet" href="css/jquery.jgrowl.css">
+    <link rel="stylesheet" href="js/elfinder/css/elfinder.css" media="screen" />
+    <link rel="stylesheet" href="css/jquery.tagsinput.css" />
+    <link rel="stylesheet" href="css/demo_table.css" >
+    <link rel="stylesheet" href="js/export/css/TableTools.css" >
+    <link rel="stylesheet" href="css/validationEngine.jquery.css">
+    <link rel="stylesheet" href="css/jquery.stepy.css" />
+    
+	<link rel="stylesheet" href="css/icon/font-awesome.css">    <link rel="stylesheet" href="css/bootstrap-responsive.css">
+    
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="green-theme" href="css/color/green.css" />
+	<link rel="alternate stylesheet" type="text/css" media="screen" title="red-theme" href="css/color/red.css" />
+	<link rel="alternate stylesheet" type="text/css" media="screen" title="black-theme" href="css/color/black.css" />
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="orange-theme" href="css/color/orange.css" />
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="purple-theme" href="css/color/purple.css" />
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="silver-theme" href="css/color/silver.css" />
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="metro-theme" href="css/color/metro.css" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lte IE 8]><script type="text/javascript" src="/js/excanvas.min.js"></script><![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/images/icons/favicon.ico">
+    
+  </head>
+
+  <body>
+<!-- switcher color -->
+<div id="slideout">
+  <a class="link-settings-colors"><i class="icon-cog"></i></a>
+  <div id="slideout_inner">
+    <form id="switchform">
+      <ul>
+            <li><a href="javascript:chooseStyle('none', 30)" class="colorblue">Default style</a></li>
+            <li><a href="javascript:chooseStyle('orange-theme', 30)" class="colororange">Orange theme</a></li>
+            <li><a href="javascript:chooseStyle('silver-theme', 30)" class="colorsilver">Silver theme</a></li>
+            <li><a href="javascript:chooseStyle('black-theme', 30)" class="colorblack">Black theme</a></li>
+            <li><a href="javascript:chooseStyle('green-theme', 30)" class="colorgreen">Green theme</a></li>
+            <li><a href="javascript:chooseStyle('purple-theme', 30)" class="colorpurple">Purple theme</a></li>
+            <li><a href="javascript:chooseStyle('red-theme', 30)" class="colorred">Red theme</a></li>
+            <li><a href="javascript:chooseStyle('metro-theme', 30)" class="colormetro">Metro theme</a></li>
+        </ul>
+      </form>
+  </div>
+</div>
+<!-- switcher color END-->
+
+	<!--Header Start-->
+	<div class="header" >
+    		
+           <a href="dashboard.html" class="logo"><h1>SWEET DREAMS</h1></a>
+           
+           <div class="pull-right">
+           
+           <!--Notifications Start-->  
+           <div class="notifications-head">
+           
+           <!--Messages Start-->
+           <div class="btn-group m_left hide-mobile" >
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+    	     	<span class="notification">531</span><span class="triangle-1"></span><i class="icon-comments"></i><span class="caret"></span>
+            </a>
+            <div class="dropdown-menu">
+            
+              <span class="triangle-2"></span>
+              <div class="ichat">
+               <div class="ichat-messages">
+               	<div class="ichat-title">
+                  <div class="pull-left">New Messages</div>
+                  <div class="pull-right"><span>Update 4*</span></div>
+                  <div class="clear"></div>
+                </div>
+                
+                <div class="imessage">
+                  <div class="iavatar"><img src="images/users/1.jpg" alt=""></div>
+                  <div class="imes">
+                  	<div class="iauthor">Alan Cook</div>
+                    <div class="itext">All right. Thank you.</div>
+                  </div>
+                  <div class="idelete"><a href="#"><span><i class="icon-remove"></i></span></a></div>
+                  <div class="clear"></div>
+                </div>
+                <div class="imessage">
+                  <div class="iavatar"><img src="images/users/6.jpg" alt=""></div>
+                  <div class="imes">
+                  	<div class="iauthor">Emma Clark</div>
+                    <div class="itext">Will you pay by credit card?</div>
+                  </div>
+                  <div class="idelete"><a href="#"><span><i class="icon-remove"></i></span></a></div>
+                  <div class="clear"></div>
+                </div>
+                <div class="imessage">
+                  <div class="iavatar"><img src="images/users/2.jpg" alt=""></div>
+                  <div class="imes">
+                  	<div class="iauthor">Blake Washington</div>
+                    <div class="itext">Can I help you?</div>
+                  </div>
+                  <div class="idelete"><a href="#"><span><i class="icon-remove"></i></span></a></div>
+                  <div class="clear"></div>
+                </div>
+                
+                <div class="ichat-link"><a href="#">InBox</a> <a href="#">OutBox</a> <a href="#">Spam</a> <a href="#">Trash</a>
+                <div class="clear"></div>
+                </div>
+                
+                </div>
+                <a href="#" class="iview">View all</a><a href="#" class="imark">Mark all read</a>
+               
+              </div>
+            
+            </div>
+          </div>
+          <!--Messages END--> 
+          
+          <!--Recent Activity Start-->
+           <div class="btn-group pull-left hide-mobile" >
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+    	     	<span class="notification">77</span><span class="triangle-1"></span><i class="icon-bell"></i><span class="caret"></span>
+            </a>
+            <div class="dropdown-menu">
+            
+              <span class="triangle-2"></span>
+              <div class="ichat">
+               <div class="ichat-messages">
+               	<div class="ichat-title">
+                  <div class="pull-left">Recent Activity</div>
+                  <div class="pull-right"><span>Update 14*</span></div>
+                  <div class="clear"></div>
+                </div>
+                
+                <div class="r_activity">
+                <div class="imessage">
+                  <div class="r_icon"><a href="#"><i class="icon-camera"></i></a></div>
+                  <div class="r_info">
+                  	<div class="r_name"><strong>Alan Cook</strong> a new photo</div>
+                    <div class="r_text"><i class="icon-time"></i> 3 hours ago</div>
+                    <div class="r_link"><a href="#">View...</a></div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div class="imessage">
+                  <div class="r_icon"><a href="#"><i class="icon-thumbs-up"></i></a></div>
+                  <div class="r_info">
+                  	<div class="r_name"><strong>Isaac Donaldson</strong> like: BMW E36</div>
+                    <div class="r_text"><i class="icon-time"></i> 5 hours ago</div>
+                    <div class="r_link"><a href="#">View...</a></div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div class="imessage">
+                  <div class="r_icon"><a href="#"><i class="icon-user"></i></a></div>
+                  <div class="r_info">
+                  	<div class="r_name">Registered new user</div>
+                    <div class="r_text"><i class="icon-time"></i> 15th of May - 06:21</div>
+                    <div class="r_link"><a href="#">View...</a></div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                </div>
+               
+                
+                </div>
+                <a href="#" class="iview">View all</a><a href="#" class="imark">Mark all read</a>
+               
+              </div>
+            
+            </div>
+          </div>
+          <!--Recent Activity END--> 
+            
+          </div><!--Notifications END-->
+            
+           <!--Button User Start-->  
+		   <div class="btn-group pull-right" >
+            <a class="btn btn-profile dropdown-toggle" id="button-profile" data-toggle="dropdown" href="#">
+              <span class="name-user"><strong>Welcome</strong>, Alan Cook</span> 
+              <span class="avatar"><img src="images/users/1.jpg" alt="" ></span> 
+              <span class="caret"></span>
+            </a>
+            <div class="dropdown-menu" id="prof_dropdown">
+            <div class="item_m"><span class="caret"></span></div>
+            <ul class="clear_ul" >
+              <li><a href="#"><i class="icon-globe"></i> Home</a></li>
+              <li><a href="#"><i class="icon-comments"></i> Messages</a></li>
+              <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
+              <li><a href="index.html"><i class="icon-off"></i> Sign Out</a></li>
+            </ul>
+            </div>
+          </div>
+          <!--Button User END-->  
+          
+          </div>
+    </div>
+    <!--Header END-->
+
+    
+    <!--Sidebar Start--> 
+	<div id="sidebar">
+      <ul class="menu-sidebar">
+       <li><a href="dashboard.html"><i class="icon-home"></i> <span>General</span></a></li>
+       <li><a href="ui.html"><i class="icon-group"></i> <span>UI </span></a></li>
+       <li><a href="forms.html"><i class="icon-edit"></i> <span>Forms</span></a></li>
+       <li><a href="widgets.html" class="active"><i class="icon-briefcase"></i> <span>Others</span></a></li>
+       <li><a href="error_404.html"><i class="icon-warning-sign"></i> <span>Errors</span></a></li>
+       <li><a href="messages.html"><i class="icon-gift"></i> <span>Bonus</span></a></li>
+      </ul>
+
+    
+    </div>
+    <!--Sidebar END-->
+    
+    <!--Content Start-->
+	<div id="content">
+    
+    	    
+	 <!--SpeedBar Start-->
+     <div class="speedbar">
+     <div class="speedbar-content">
+     
+     <ul class="menu-drop">
+     			<li><a href="#"><i class="icon-chevron-down"></i></a>
+               		<ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="charts.html">Charts</a></li>
+                        <li><a href="gallery.html">Image Gallery</a></li>
+                        <li><a href="calendar.html">Calendar</a></li>
+                        <li><a href="ui.html">UI elements</a></li>
+                        <li><a href="icons.html">Icons</a></li>
+                        <li><a href="buttons.html">Buttons</a></li>
+                        <li><a href="grids.html">Grids</a></li>
+                        <li><a href="forms.html">Inputs & elements</a></li>
+                        <li><a href="form_validation.html">Validation</a></li>
+                        <li><a href="wizard.html">Wizard</a></li>
+                        <li><a href="file_manager.html">File Manager</a></li>
+                        <li><a href="conversation.html">Conversation</a></li>
+                        <li><a href="widgets.html">Widgets</a></li>
+                        <li><a href="typography.html">Typography</a></li>
+                        <li><a href="tables.html">Tables</a></li>
+                        <li><a href="datatables.html">DataTables</a></li>
+                        <li><a href="error_404.html">Error 404</a></li>
+                        <li><a href="error_500.html">Error 500</a></li>
+                        <li><a href="error_503.html">Error 503</a></li>
+                        <li><a href="error_offline.html">Error Offline</a></li>
+                        <li><a href="messages.html">Messages</a></li>
+                        <li><a href="search.html">Search</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="stream.html">Stream</a></li>
+                        <li><a href="invoice.html">Invoice</a></li>
+                    </ul>  
+                </li>
+     </ul>
+     
+     <ul class="menu-speedbar">
+    	 <li><a href="widgets.html" class="act_link">Widgets</a></li>
+         <li><a href="typography.html">Typography</a></li>
+         <li><a href="tables.html">Tables</a></li>
+         <li><a href="datatables.html">DataTables</a></li>
+         
+     </ul>
+
+     
+     </div>
+     </div>
+     <!--SpeedBar END-->
+     
+     <!--Search Start-->   
+     <div class="search">
+     <form class="search-form">
+     	<input type="text" name="" value="" placeholder="Enter keywords">
+     </form>
+	 <div class="clear"></div>	
+     </div>
+     <!--Search END-->
+     
+     <!--CONTENT MAIN START-->
+     <div class="content">
+     	
+        <!--NOTES Start-->
+        <div class="scroll-pane horizontal-only notes">
+        <div style="width: 2420px;">
+          <div class="note">
+            <div class="note-img"><img src="images/photo/note/1_mini.jpg" alt=""></div>
+            <div class="note-category cat-green">video</div>
+            <div class="note-title">Title Post #1</div>
+            <div class="note-more"><a href="#">Watch the Video</a></div>
+            <div class="note-info"><span>2 hours ago</span><span>5 comments</span></div>
+          </div>
+          <div class="note">
+            <div class="note-img"><img src="images/photo/note/2_mini.jpg" alt=""></div>
+            <div class="note-category cat-blue">New post</div>
+            <div class="note-title">Title Post #2</div>
+            <div class="note-more"><a href="#">Watch the Post</a></div>
+            <div class="note-info"><span>2 hours ago</span><span>5 comments</span></div>
+          </div>
+          <div class="note">
+            <div class="note-img"><img src="images/photo/note/3_mini.jpg" alt=""></div>
+            <div class="note-category cat-orange">pictures</div>
+            <div class="note-title">Title Post #3</div>
+            <div class="note-more"><a href="#">Watch the Album</a></div>
+            <div class="note-info"><span>2 hours ago</span><span>5 comments</span></div>
+          </div>
+          <div class="note">
+            <div class="note-img"><img src="images/photo/note/4_mini.jpg" alt=""></div>
+            <div class="note-category cat-green">video</div>
+            <div class="note-title">Title Post #4</div>
+            <div class="note-more"><a href="#">Watch the Video</a></div>
+            <div class="note-info"><span>2 hours ago</span><span>5 comments</span></div>
+          </div>
+          <div class="note">
+            <div class="note-img"><img src="images/photo/note/5_mini.jpg" alt=""></div>
+            <div class="note-category cat-green">video</div>
+            <div class="note-title">Title Post #5</div>
+            <div class="note-more"><a href="#">Watch the Video</a></div>
+            <div class="note-info"><span>2 hours ago</span><span>5 comments</span></div>
+          </div>
+          <div class="note">
+            <div class="note-img"><img src="images/photo/note/6_mini.jpg" alt=""></div>
+            <div class="note-category cat-green">video</div>
+            <div class="note-title">Title Post #6</div>
+            <div class="note-more"><a href="#">Watch the Video</a></div>
+            <div class="note-info"><span>2 hours ago</span><span>5 comments</span></div>
+          </div>
+          <div class="note">
+            <div class="note-img"><img src="images/photo/note/7_mini.jpg" alt=""></div>
+            <div class="note-category cat-green">video</div>
+            <div class="note-title">Title Post #7</div>
+            <div class="note-more"><a href="#">Watch the Video</a></div>
+            <div class="note-info"><span>2 hours ago</span><span>5 comments</span></div>
+          </div>
+          <div class="note">
+            <div class="note-img"><img src="images/photo/note/8_mini.jpg" alt=""></div>
+            <div class="note-category cat-green">video</div>
+            <div class="note-title">Title Post #8</div>
+            <div class="note-more"><a href="#">Watch the Video</a></div>
+            <div class="note-info"><span>2 hours ago</span><span>5 comments</span></div>
+          </div>
+        </div>
+        </div>  
+        <!--NOTES END-->
+        
+        <div class="row-fluid">
+        <!--Latest posts Start-->
+        <div class="grid span4">
+          <div class="grid-title">
+           <div class="pull-left">Latest posts</div>
+           <div class="pull-right"></div>
+           <div class="clear"></div>   
+          </div>
+          
+             <div class="last-posts">
+                 <div class="last-post">
+                   <img src="images/strat_mini.jpg" alt=""> 
+                   <div class="last-post-title"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></div> 
+                   <div class="last-post-date">13 May 2012</div>
+                   <div class="clear"></div>
+                 </div>
+                 <div class="last-post">
+                   <img src="images/strat_mini.jpg" alt=""> 
+                   <div class="last-post-title"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></div> 
+                   <div class="last-post-date">13 May 2012</div>
+                   <div class="clear"></div>
+                 </div>
+                 <div class="last-post">
+                   <img src="images/strat_mini.jpg" alt=""> 
+                   <div class="last-post-title"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></div> 
+                   <div class="last-post-date">13 May 2012</div>
+                   <div class="clear"></div>
+                 </div>
+             </div>
+          
+        </div>
+        <!--Latest posts END-->
+       
+        <!--Archives Start-->
+        <div class="grid span4">
+          <div class="grid-title">
+           <div class="pull-left">Archives</div>
+           <div class="pull-right"></div>
+           <div class="clear"></div>   
+          </div>
+          
+           <table class="table table-striped table-mod-2 archives">
+            <tbody>
+              <tr>
+                <td><a href="#"><i class="icon-move"></i> March <span>2014</span></a></td>
+              </tr>
+              <tr>
+                <td><a href="#"><i class="icon-move"></i> February <span>2014</span></a></td>
+              </tr>
+              <tr>
+                <td><a href="#"><i class="icon-move"></i> January <span>2014</span></a></td>
+              </tr>
+              <tr>
+                <td><a href="#"><i class="icon-move"></i> December <span>2013</span></a></td>
+              </tr>
+              <tr>
+                <td><a href="#"><i class="icon-move"></i> November <span>2013</span></a></td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div class="archives-button"><a href="#" class="btn">See all Archives</a></div>
+         
+        </div>
+        <!--Archives END-->
+        
+        <!--Wishlist Widget Start-->
+        <div class="grid span4">
+          <div class="grid-title">
+           <div class="pull-left">Wishlist Widget</div>
+           <div class="pull-right">
+               <button class="btn icon-alone"><i class="icon-plus"></i></button>
+               <button class="btn icon-alone"><i class="icon-trash"></i></button>
+           </div>
+           <div class="clear"></div>   
+          </div>
+          
+
+           <table class="table table-striped table-mod archives">
+            <tbody>
+              <tr>
+                <td class="chex-table"><input type="checkbox" name="numbers[]" class="mc" value="0" id="1" /><label for="1"><span></span></label></td> 
+                <td><a href="#">Clean the house</a></td>
+              </tr>
+              <tr>
+                <td class="chex-table"><input type="checkbox" name="numbers[]" class="mc" value="0" id="2" checked /><label for="2"><span></span></label></td>
+                <td><a href="#"><s>Take out the trash</s></a></td>
+              </tr>
+              <tr>
+                <td class="chex-table"><input type="checkbox" name="numbers[]" class="mc" value="0" id="3" /><label for="3"><span></span></label></td>
+                <td><a href="#">Do the dishes</a></td>
+              </tr>
+              <tr>
+                <td class="chex-table"><input type="checkbox" name="numbers[]" class="mc" value="0" id="4" checked /><label for="4"><span></span></label></td>
+                <td><a href="#"><s>Feed the dog</s></a></td>
+              </tr>
+              <tr>
+                <td class="chex-table"><input type="checkbox" name="numbers[]" class="mc" value="0" id="5" /><label for="5"><span></span></label></td>
+                <td><a href="#">Mow the lawn</a></td>
+              </tr>
+              <tr>
+                <td class="chex-table"><input type="checkbox" name="numbers[]" class="mc" value="0" id="6" /><label for="6"><span></span></label></td>
+                <td><a href="#">Clean the pool</a></td>
+              </tr>
+            </tbody>
+          </table> 
+          
+        </div>
+        <!--Wishlist Widget END-->     
+        </div>
+        
+        <div class="row-fluid">
+        <!--Image Sliders Start-->
+        <div class="grid span6">
+          <div class="grid-title">
+           <div class="pull-left">Image Sliders</div>
+           <div class="pull-right"></div>
+           <div class="clear"></div>   
+          </div>
+          <div >
+           <div id="myCarousel" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="item active">
+                <span><img src="images/photo/note/8_mini.jpg" alt=""></span>
+              </div>
+              <div class="item">
+                 <span><img src="images/photo/note/6_mini.jpg" alt=""></span> 
+              </div>
+              <div class="item">
+                <span><img src="images/photo/note/7_mini.jpg" alt=""></span>
+                <div class="carousel-caption">
+                  <h4>Third Thumbnail label</h4>
+                  <p>Text text text text</p>
+                </div>
+              </div>
+            </div>
+            <div class="pull-right">
+            <div class="carousel-nav">
+            <a class="carousel-control left-nav-carousel" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right-nav-carousel" href="#myCarousel" data-slide="next">&rsaquo;</a>
+            </div>
+            </div>
+            <div class="clear"></div>
+          </div>
+</div>
+        </div>
+        <!--Image Sliders END-->    
+        
+        <!--Notifications Start-->
+        <div class="grid span6">
+          <div class="grid-title">
+           <div class="pull-left">Notifications</div>
+           <div class="pull-right"></div>
+           <div class="clear"></div>   
+          </div>
+          
+          <table class="table table-striped table-mod-2 archives">
+            <tbody>
+              <tr>
+                <td class="n-orange"><a href="#"><i class="icon-user"></i> Ashley <span>is now following you</span></a></td>
+              </tr>
+              <tr>
+                <td class="n-red"><a href="#"><i class="icon-heart"></i> Tanver <span>liked your status</span></a></td>
+              </tr>
+              <tr>
+                <td class="n-blue"><a href="#"><i class="icon-comment"></i> Iounut Zamfir <span>sent you a message</span></a></td>
+              </tr>
+              <tr>
+                <td><a href="#"><i class="icon-user"></i> Ashley <span>is now following you</span></a></td>
+              </tr>
+              <tr>
+                <td><a href="#"><i class="icon-heart"></i> Tanver <span>liked your status</span></a></td>
+              </tr>
+              <tr>
+                <td><a href="#"><i class="icon-comment"></i> Iounut Zamfir <span>sent you a message</span></a></td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div class="archives-button"><a href="#" class="btn">See all Activity</a></div>
+
+        </div>
+        <!--Notifications END-->      
+        </div>
+        
+        <!--Calendar + Events Start-->
+        <div class="grid">
+          <div class="grid-title">
+           <div class="pull-left">Calendar + Events</div>
+           <div class="pull-right"></div>
+           <div class="clear"></div>   
+          </div>
+          
+          <div class="grid-content">
+          <div class="row-fluid">
+            <div class="span6 cal-min"><div id="calendar"></div></div>
+            <div class="span6">
+             <strong>Feedback</strong>
+             <ul class="none-list events-list"> 
+                <li><i class="fam-bullet-green"></i> 15\03\2012 <span>Post design on Dribbble</span></li> 
+                <li><i class="fam-bullet-green"></i> 18\03\2012 <span>Work on feedback on design</span></li> 
+                <li><i class="fam-bullet-green"></i> 20\04\2012 <span>Send design to client</span></li> 
+                <li><i class="fam-bullet-green"></i> 27\04\2012 <span>Celebrate success :)</span></li> 
+             </ul>
+             
+             <strong>Client Calendar</strong>
+             <ul class="none-list events-list"> 
+                <li><i class="fam-bullet-orange"></i> 15\03\2012 <span>Post design on Dribbble</span></li> 
+                <li><i class="fam-bullet-orange"></i> 18\03\2012 <span>Work on feedback on design</span></li> 
+                <li><i class="fam-bullet-orange"></i> 20\04\2012 <span>Send design to client</span></li> 
+                <li><i class="fam-bullet-orange"></i> 27\04\2012 <span>Celebrate success :)</span></li> 
+             </ul>
+             
+             <strong>House Calendar</strong>
+             <ul class="none-list events-list"> 
+                <li><i class="fam-bullet-red"></i> 15\03\2012 <span>Post design on Dribbble</span></li> 
+                <li><i class="fam-bullet-red"></i> 18\03\2012 <span>Work on feedback on design</span></li> 
+                <li><i class="fam-bullet-red"></i> 20\04\2012 <span>Send design to client</span></li> 
+                <li><i class="fam-bullet-red"></i> 27\04\2012 <span>Celebrate success :)</span></li> 
+             </ul>
+            </div>
+          </div>
+          </div>
+          
+        </div>
+        <!--Calendar + Events END-->
+        
+        <!--Ajax Loaders Start-->
+        <div class="grid">
+          <div class="grid-title">
+           <div class="pull-left">Ajax Loaders</div>
+           <div class="pull-right"></div>
+           <div class="clear"></div>   
+          </div>
+          
+          <div class="grid-content loaders">
+           <img src="images/load/1.gif" alt="">
+           <img src="images/load/2.gif" alt="">
+           <img src="images/load/3.gif" alt="">
+           <img src="images/load/4.gif" alt="">
+           <img src="images/load/5.gif" alt="">
+           <img src="images/load/6.gif" alt="">
+           <img src="images/load/7.gif" alt="">
+           <img src="images/load/8.gif" alt="">
+           <img src="images/load/10.gif" alt="">
+           <img src="images/load/11.gif" alt="">
+           <img src="images/load/12.gif" alt="">
+           <img src="images/load/13.gif" alt="">
+           <img src="images/load/14.gif" alt="">
+           <img src="images/load/15.gif" alt="">
+           <img src="images/load/16.gif" alt="">
+           <img src="images/load/17.gif" alt="">
+           <img src="images/load/18.gif" alt="">
+           <img src="images/load/19.gif" alt="">
+           <img src="images/load/20.gif" alt="">
+           <img src="images/load/21.gif" alt="">
+           <img src="images/load/22.gif" alt="">
+           <img src="images/load/23.gif" alt="">
+           <img src="images/load/24.gif" alt="">
+           <img src="images/load/25.gif" alt="">
+           <img src="images/load/26.gif" alt="">
+           <img src="images/load/27.gif" alt="">
+           <img src="images/load/28.gif" alt="">
+           <img src="images/load/29.gif" alt="">
+           <img src="images/load/30.gif" alt="">
+           <img src="images/load/31.gif" alt="">
+           <img src="images/load/32.gif" alt="">
+           <img src="images/load/33.gif" alt="">
+           <img src="images/load/34.gif" alt="">
+           <img src="images/load/35.gif" alt="">
+           <img src="images/load/36.gif" alt="">
+           <img src="images/load/37.gif" alt="">
+           <img src="images/load/38.gif" alt="">
+           <img src="images/load/39.gif" alt="">
+           
+          </div>
+        </div>
+        <!--Ajax Loaders END-->
+        
+        <div class="row-fluid">
+        <!--Input Head Start-->
+        <div class="grid span3">
+          <div class="grid-title">
+           <div class="pull-left">Input Head</div>
+           <div class="pull-right">
+               <input type="text" name="regular" class="min-input" value="5">
+           </div>
+           <div class="clear"></div>   
+          </div>
+          
+          <div class="grid-content">
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </div>
+        </div>
+        <!--Input Head END-->
+        <!--With Label Start-->
+        <div class="grid span3">
+          <div class="grid-title">
+           <div class="pull-left">With Label</div>
+           <div class="pull-right">
+               <div class="grid-title-label"><span class="label label-warning">euismod</span></div>
+           </div>
+           <div class="clear"></div>   
+          </div>
+          
+          <div class="grid-content">
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </div>
+        </div>
+        <!--With Label END-->
+        <!--With Icon Start-->
+        <div class="grid span3">
+          <div class="grid-title">
+           <div class="pull-left">With Icon</div>
+           <div class="pull-right">
+               <div class="grid-title-text-2 tooltip-top"><a href="#" data-t="tooltip" data-original-title="settings"><i class="icon-cog"></i></a></div>
+           </div>
+           <div class="clear"></div>   
+          </div>
+          
+          <div class="grid-content">
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </div>
+        </div>
+        <!--With Icon END-->
+        <!--Date Start-->
+        <div class="grid span3">
+          <div class="grid-title">
+           <div class="pull-left">Date</div>
+           <div class="pull-right">
+               <div class="stat-input-date">
+               <input type="text" name="regular" class="input-date-min" value="Jan 1, 2012">
+               <div class="fieldIcon"><i class="icon-calendar"></i></div>
+             </div>
+           </div>
+           <div class="clear"></div>   
+          </div>
+          
+          <div class="grid-content">
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </div>
+        </div>
+        <!--Date END-->
+        </div>
+        
+        <!--With Progressbar Start-->
+        <div class="grid">
+          <div class="grid-title">
+           <div class="pull-left">With Progressbar</div>
+           <div class="pull-right">
+               <div class="progress-head">
+                 <div class="p-headway-min"><div class="p-advance-min" style="width:40%;"></div></div>
+               </div>
+           </div>
+           <div class="clear"></div>   
+          </div>
+          
+          <div class="grid-content">
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </div>
+        </div>
+        <!--With Progressbar END-->
+        
+        <!--Slider Start-->
+        <div class="grid">
+          <div class="grid-title">
+           <div class="pull-left">Slider</div>
+           <div class="pull-right">
+               <div class="slider-head">
+                 <div class="slider-red demo_slider"></div>
+               </div>
+           </div>
+           <div class="clear"></div>   
+          </div>
+          
+          <div class="grid-content">
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </div>
+        </div>
+        <!--Slider END-->
+        
+        <!--Search bar Start-->
+        <div class="grid">
+          <div class="grid-title">
+           <div class="pull-left">Search Bar</div>
+           <div class="pull-right"></div>
+           <div class="clear"></div>   
+          </div>
+          
+          <div class="search-bar">
+          	<input type="text" class="span" name="" placeholder="Search...">
+          </div>
+          
+          <div class="grid-content">
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </div>
+        </div>
+        <!--Search bar END-->
+        
+        <!--Modal Start-->
+        <div class="grid">
+          <div class="grid-title">
+           <div class="pull-left">Modal</div>
+           <div class="pull-right"></div>
+           <div class="clear"></div>   
+          </div>
+      
+          <div class="grid-content">
+             <div class="btn-modal">
+                      <button data-target="#basic-modal" data-toggle="modal" class="btn btn-info">Basic Modal</button>
+                      <button data-target="#header-modal" data-toggle="modal" class="btn btn-warning">Modal with Header</button>
+                      <button data-target="#anim-modal" data-toggle="modal" class="btn btn-success">Animated Modal</button>
+             </div>
+                                                
+                                                <div id="basic-modal" class="modal hide">
+                                                    <div class="modal-body">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa tellus, vestibulum consectetur vulputate eget, posuere adipiscing odio. Aliquam vestibulum sodales lectus, eu blandit lorem.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>
+                                                    </div>
+                                                </div>
+                                                <div id="header-modal" class="modal hide">
+                                                    <div class="modal-header">
+                                                        <button class="close" type="button" data-dismiss="modal">&times;</button>
+                                                        This is a modal header
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa tellus, vestibulum consectetur vulputate eget, posuere adipiscing odio. Aliquam vestibulum sodales lectus, eu blandit lorem.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>
+                                                    </div>
+                                                </div>
+                                                <div id="anim-modal" class="modal fade hide">
+                                                    <div class="modal-header">
+                                                        <button class="close" type="button" data-dismiss="modal">&times;</button>
+                                                        This is a modal header
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa tellus, vestibulum consectetur vulputate eget, posuere adipiscing odio. Aliquam vestibulum sodales lectus, eu blandit lorem.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>
+                                                    </div>
+                                                </div>
+		   <div class="clear"></div>
+
+          </div>
+        </div>
+        <!--Modal END-->
+        
+        <!--Pop-Up Notifications Start-->
+        <div class="grid">
+          <div class="grid-title">
+           <div class="pull-left">Pop-Up Notifications</div>
+           <div class="pull-right"></div>
+           <div class="clear"></div>   
+          </div>
+      
+          <div class="grid-content">
+             <div class="formRight distance">
+						 <p><button type="submit" class="btn btn-primary" onclick="$.jGrowl('One more message...');"><span>Normal</span></button></p>
+                         <p class="text-center"><button type="submit" class="btn btn-primary" onclick="$.jGrowl('Stick this!', { sticky: true });"><span>Sticky</span></button></p>
+                         <p class="text-center"><button type="submit" class="btn btn-primary" onclick="$.jGrowl('A message with a header', { header: 'Important' });"><span>With header</span></button> </p> 
+						 <p class="text-right"><button type="submit" class="btn btn-primary" onclick="$.jGrowl('A message that will live a little longer.', { life: 10000 });"><span>Longer life</span></button></p>
+           </div>
+		   <div class="clear"></div>
+
+          </div>
+        </div>
+        <!--Pop-Up Notifications END-->
+        
+        <div class="row-fluid">
+        <!--With ToolBar #1 Start-->
+        <div class="grid span6">
+          <div class="grid-title">
+           <div class="pull-left">With ToolBar #1</div>
+           <div class="pull-right">
+               <div class="grid-title-load"><img src="images/load/2.gif" alt=""></div>
+           </div>
+           <div class="clear"></div>   
+          </div>
+           
+          <div class="toolbar">
+              <a href="#">Link</a>
+              <a href="#">Link</a>
+			  <a href="#">Link</a>
+              <div class="clear"></div>
+          </div>
+          
+          <div class="grid-content">
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+          
+        </div>
+        <!--With ToolBar #1 END-->
+
+		<!--With ToolBar #2 Start-->
+        <div class="grid span6">
+          <div class="grid-title">
+           <div class="pull-left">With ToolBar #2</div>
+           <div class="pull-right">
+               <div class="grid-title-load"><img src="images/load/2.gif" alt=""></div>
+           </div>
+           <div class="clear"></div>   
+          </div>
+          
+          <div class="grid-content">
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+          
+          <div class="toolbar toolbar-footer">
+              <a href="#">Link</a>
+              <a href="#">Link</a>
+			  <a href="#">Link</a>
+              <div class="clear"></div>
+          </div>
+        </div>
+        <!--With ToolBar #2 END-->
+        </div>
+        
+        <!--Scroll Horizontal Start-->
+        <div class="grid">
+          <div class="grid-title">
+           <div class="pull-left">Scroll Horizontal</div>
+           <div class="pull-right"> </div>
+           <div class="clear"></div>   
+          </div>
+          
+          <div class="grid-content">
+          	<div class="scroll-pane horizontal-only">
+       		<div style="width: 2420px;">
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+             </div>
+             </div>
+          </div>
+        </div>
+        <!--Scroll Horizontal END-->
+        
+        <!--Scroll Vertical Start-->
+        <div class="grid">
+          <div class="grid-title">
+           <div class="pull-left">Scroll Vertical</div>
+           <div class="pull-right"> </div>
+           <div class="clear"></div>   
+          </div>
+          
+          <div class="grid-content">
+          	<div class="scroll-pane scroll-pane-min">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in ligula id sem tristique ultrices
+					eget id neque. Duis enim turpis, tempus at accumsan vitae, lobortis id sapien. Pellentesque nec orci
+					mi, in pharetra ligula. Nulla facilisi. Nulla facilisi. Mauris convallis venenatis massa, quis
+					consectetur felis ornare quis. Sed aliquet nunc ac ante molestie ultricies. Nam pulvinar ultricies
+					bibendum. Vivamus diam leo, faucibus et vehicula eu, molestie sit amet dui. Proin nec orci et elit
+					semper ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+					mus. Sed quis urna mi, ac dignissim mauris. Quisque mollis ornare mauris, sed laoreet diam malesuada
+					quis. Proin vel elementum ante. Donec hendrerit arcu ac odio tincidunt posuere. Vestibulum nec risus
+					eu lacus semper viverra.
+				</p>
+				<p>
+					Vestibulum dictum consectetur magna eu egestas. Praesent molestie dapibus erat, sit amet sodales
+					lectus congue ut. Nam adipiscing, tortor ac blandit egestas, lorem ligula posuere ipsum, nec
+					faucibus nisl enim eu purus. Quisque bibendum diam quis nunc eleifend at molestie libero tincidunt.
+					Quisque tincidunt sapien a sapien pellentesque consequat. Mauris adipiscing venenatis augue ut
+					tempor. Donec auctor mattis quam quis aliquam. Nullam ultrices erat in dolor pharetra bibendum.
+					Suspendisse eget odio ut libero imperdiet rhoncus. Curabitur aliquet, ipsum sit amet aliquet varius,
+					est urna ullamcorper magna, sed eleifend libero nunc non erat. Vivamus semper turpis ac turpis
+					volutpat non cursus velit aliquam. Fusce id tortor id sapien porta egestas. Nulla venenatis luctus
+					libero et suscipit. Sed sed purus risus. Donec auctor, leo nec eleifend vehicula, lacus felis
+					sollicitudin est, vitae lacinia lectus urna nec libero. Aliquam pellentesque, arcu condimentum
+					pharetra vestibulum, lectus felis malesuada felis, vel fringilla dolor dui tempus nisi. In hac
+					habitasse platea dictumst. Ut imperdiet mauris vitae eros varius eget accumsan lectus adipiscing.
+				</p>
+				<p>
+					Quisque et massa leo, sit amet adipiscing nisi. Mauris vel condimentum dolor. Duis quis ullamcorper
+					eros. Proin metus dui, facilisis id bibendum sed, aliquet non ipsum. Aenean pulvinar risus eu nisi
+					dictum eleifend. Maecenas mattis dolor eget lectus pretium eget molestie libero auctor. Praesent sit
+					amet tellus sed nibh convallis semper. Curabitur nisl odio, feugiat non dapibus sed, tincidunt ut
+					est. Nullam erat velit, suscipit aliquet commodo sit amet, mollis in mauris. Curabitur pharetra
+					dictum interdum. In posuere pretium ultricies. Curabitur volutpat eros vehicula quam ultrices
+					varius. Proin volutpat enim a massa tempor ornare. Sed ullamcorper fermentum nisl, ac hendrerit sem
+					feugiat ac. Donec porttitor ullamcorper quam. Morbi pretium adipiscing quam, quis bibendum diam
+					congue eget. Sed at lectus at est malesuada iaculis. Sed fermentum quam dui. Donec eget ipsum dolor,
+					id mollis nisi. Donec fermentum vehicula porta.
+				</p>
+				<p>
+					Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+					Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
+					sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+					Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed,
+					commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros
+					ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.
+					Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna
+					eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
+					luctus, metus
+				</p>
+				<p>
+					Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+					Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
+					amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+				</p>
+			</div> 
+
+          </div>
+        </div>
+        <!--Scroll Vertical END-->
+        
+        <div class="row-fluid">
+        <!--Recent Users Start-->
+        <div class="grid span6">
+          <div class="grid-title">
+           <div class="pull-left">Recent Users</div>
+           <div class="pull-right"><div class="grid-title-load"><img src="images/load/2.gif" alt=""></div></div>
+           <div class="clear"></div>   
+          </div>
+          
+          <div class="users">
+             <div class="user c_bg-2">
+               <div class="user-avatar"><img src="images/users/6.jpg" alt=""></div>
+               <div class="user-info">
+                  <div class="user-name">Uma Thurman <span class="label label-success">online</span> </div>
+                  <div class="user-email"><a href="#">info@somemail.com</a></div>
+                  <div class="user-date">23 Seconds ago</div>
+               </div>
+               <ul class="user-actions">
+               	  <li><a href="#"><i class="icon-comment"></i></a></li>
+                  <li><a href="#"><i class="icon-user"></i></a></li>
+               </ul>
+               <div class="clear"></div>
+             </div>
+             
+             <div class="user">
+               <div class="user-avatar"><img src="images/users/6.jpg" alt=""></div>
+               <div class="user-info">
+                  <div class="user-name">Uma Thurman <span class="label label-important">offline</span> </div>
+                  <div class="user-email"><a href="#">info@somemail.com</a></div>
+                  <div class="user-date">23 Seconds ago</div>
+               </div>
+               <ul class="user-actions">
+               	  <li><a href="#"><i class="icon-comment"></i></a></li>
+                  <li><a href="#"><i class="icon-user"></i></a></li>
+               </ul>
+               <div class="clear"></div>
+             </div>
+             
+             <div class="user c_bg-2">
+               <div class="user-avatar"><img src="images/users/6.jpg" alt=""></div>
+               <div class="user-info">
+                  <div class="user-name">Uma Thurman <span class="label label-important">offline</span> </div>
+                  <div class="user-email"><a href="#">info@somemail.com</a></div>
+                  <div class="user-date">23 Seconds ago</div>
+               </div>
+               <ul class="user-actions">
+               	  <li><a href="#"><i class="icon-comment"></i></a></li>
+                  <li><a href="#"><i class="icon-user"></i></a></li>
+               </ul>
+               <div class="clear"></div>
+             </div>
+          </div>
+          
+        </div>
+        <!--Recent Users END-->
+        
+        <!--Shopping Cart Start-->
+        <div class="grid span6">
+          <div class="grid-title">
+           <div class="pull-left">Shopping Cart</div>
+           <div class="pull-right"><div class="grid-title-load"><img src="images/load/2.gif" alt=""></div></div>
+           <div class="clear"></div>   
+          </div>
+          
+            <div class="products">
+             <div class="product">
+               <div class="product-avatar"><img src="images/no_photo.png" alt=""></div>
+               <div class="product-info">
+                  <div class="product-name">Name Product <span class="label label-warning">500$</span> </div>
+                  <div class="product-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in ligula id sem tristique ultrices eget id neque. Duis enim turpis, tempus at accumsan vitae, lobortis id sapien. </div>
+               </div>
+               <div class="product-delete"><a href="#"><span><i class="icon-remove"></i></span></a></div>
+               <div class="clear"></div>
+             </div>
+             <div class="product c_bg-2">
+               <div class="product-avatar"><img src="images/no_photo.png" alt=""></div>
+               <div class="product-info">
+                  <div class="product-name">Name Product <span class="label label-warning">500$</span> </div>
+                  <div class="product-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in ligula id sem tristique ultrices eget id neque. Duis enim turpis, tempus at accumsan vitae, lobortis id sapien. </div>
+               </div>
+               <div class="product-delete"><a href="#"><span><i class="icon-remove"></i></span></a></div>
+               <div class="clear"></div>
+             </div>
+             <div class="product">
+               <div class="product-avatar"><img src="images/no_photo.png" alt=""></div>
+               <div class="product-info">
+                  <div class="product-name">Name Product <span class="label label-warning">500$</span> </div>
+                  <div class="product-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in ligula id sem tristique ultrices eget id neque. Duis enim turpis, tempus at accumsan vitae, lobortis id sapien. </div>
+               </div>
+               <div class="product-delete"><a href="#"><span><i class="icon-remove"></i></span></a></div>
+               <div class="clear"></div>
+             </div>
+             
+             
+          </div>
+          
+        </div>
+        <!--Shopping Cart END-->
+        </div>
+        
+                      
+     </div>
+     <!--CONTENT MAIN END-->
+
+    </div>
+    <!--Content END-->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+   
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/bootstrap-colorpicker.js"></script>
+    <script src="js/google-code-prettify/prettify.js"></script>
+   
+    <script src="js/jquery.flot.min.js"></script>
+    <script src="js/jquery.flot.pie.js"></script>
+    <script src="js/jquery.flot.orderBars.js"></script>
+    <script src="js/jquery.flot.resize.js"></script>
+    <script src="js/graphtable.js"></script>
+    <script src="js/fullcalendar.min.js"></script>
+    <script src="js/chosen.jquery.min.js"></script>
+    <script src="js/autoresize.jquery.min.js"></script>
+    <script src="js/jquery.tagsinput.min.js"></script>
+    <script src="js/jquery.autotab.js"></script>
+    <script src="js/elfinder/js/elfinder.min.js" charset="utf-8"></script>
+	<script src="js/tiny_mce/tiny_mce.js"></script>
+    <script src="js/validation/languages/jquery.validationEngine-en.js" charset="utf-8"></script>
+	<script src="js/validation/jquery.validationEngine.js" charset="utf-8"></script>
+    <script src="js/jquery.jgrowl_minimized.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/export/ZeroClipboard/ZeroClipboard.js"></script>
+    <script src="js/export/js/TableTools.js"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+    <script src="js/jquery.jscrollpane.min.js"></script>
+    <script src="js/jquery.stepy.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/raphael.2.1.0.min.js"></script>
+    <script src="js/justgage.1.0.1.min.js"></script>
+	<script src="js/glisse.js"></script>
+	<script src="js/styleswitcher.js"></script>
+    
+	<script src="js/application.js"></script>
+
+
+  </body>
+</html>
+

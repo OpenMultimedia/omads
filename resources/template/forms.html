@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Sweet Dreams - Inputs & elements</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/jquery-ui-1.8.16.custom.css" media="screen"  />
+    <link rel="stylesheet" href="css/fullcalendar.css" media="screen"  />
+    <link rel="stylesheet" href="css/chosen.css" media="screen"  />
+    <link rel="stylesheet" href="css/datepicker.css" >
+    <link rel="stylesheet" href="css/colorpicker.css">
+    <link rel="stylesheet" href="css/glisse.css?1.css">
+    <link rel="stylesheet" href="css/jquery.jgrowl.css">
+    <link rel="stylesheet" href="js/elfinder/css/elfinder.css" media="screen" />
+    <link rel="stylesheet" href="css/jquery.tagsinput.css" />
+    <link rel="stylesheet" href="css/demo_table.css" >
+    <link rel="stylesheet" href="js/export/css/TableTools.css" >
+    <link rel="stylesheet" href="css/validationEngine.jquery.css">
+    <link rel="stylesheet" href="css/jquery.stepy.css" />
+    
+	<link rel="stylesheet" href="css/icon/font-awesome.css">    <link rel="stylesheet" href="css/bootstrap-responsive.css">
+    
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="green-theme" href="css/color/green.css" />
+	<link rel="alternate stylesheet" type="text/css" media="screen" title="red-theme" href="css/color/red.css" />
+	<link rel="alternate stylesheet" type="text/css" media="screen" title="black-theme" href="css/color/black.css" />
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="orange-theme" href="css/color/orange.css" />
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="purple-theme" href="css/color/purple.css" />
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="silver-theme" href="css/color/silver.css" />
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="metro-theme" href="css/color/metro.css" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lte IE 8]><script type="text/javascript" src="/js/excanvas.min.js"></script><![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/images/icons/favicon.ico">
+    
+  </head>
+
+  <body>
+<!-- switcher color -->
+<div id="slideout">
+  <a class="link-settings-colors"><i class="icon-cog"></i></a>
+  <div id="slideout_inner">
+    <form id="switchform">
+      <ul>
+            <li><a href="javascript:chooseStyle('none', 30)" class="colorblue">Default style</a></li>
+            <li><a href="javascript:chooseStyle('orange-theme', 30)" class="colororange">Orange theme</a></li>
+            <li><a href="javascript:chooseStyle('silver-theme', 30)" class="colorsilver">Silver theme</a></li>
+            <li><a href="javascript:chooseStyle('black-theme', 30)" class="colorblack">Black theme</a></li>
+            <li><a href="javascript:chooseStyle('green-theme', 30)" class="colorgreen">Green theme</a></li>
+            <li><a href="javascript:chooseStyle('purple-theme', 30)" class="colorpurple">Purple theme</a></li>
+            <li><a href="javascript:chooseStyle('red-theme', 30)" class="colorred">Red theme</a></li>
+            <li><a href="javascript:chooseStyle('metro-theme', 30)" class="colormetro">Metro theme</a></li>
+        </ul>
+      </form>
+  </div>
+</div>
+<!-- switcher color END-->
+
+	<!--Header Start-->
+	<div class="header" >
+    		
+           <a href="dashboard.html" class="logo"><h1>SWEET DREAMS</h1></a>
+           
+           <div class="pull-right">
+           
+           <!--Notifications Start-->  
+           <div class="notifications-head">
+           
+           <!--Messages Start-->
+           <div class="btn-group m_left hide-mobile" >
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+    	     	<span class="notification">531</span><span class="triangle-1"></span><i class="icon-comments"></i><span class="caret"></span>
+            </a>
+            <div class="dropdown-menu">
+            
+              <span class="triangle-2"></span>
+              <div class="ichat">
+               <div class="ichat-messages">
+               	<div class="ichat-title">
+                  <div class="pull-left">New Messages</div>
+                  <div class="pull-right"><span>Update 4*</span></div>
+                  <div class="clear"></div>
+                </div>
+                
+                <div class="imessage">
+                  <div class="iavatar"><img src="images/users/1.jpg" alt=""></div>
+                  <div class="imes">
+                  	<div class="iauthor">Alan Cook</div>
+                    <div class="itext">All right. Thank you.</div>
+                  </div>
+                  <div class="idelete"><a href="#"><span><i class="icon-remove"></i></span></a></div>
+                  <div class="clear"></div>
+                </div>
+                <div class="imessage">
+                  <div class="iavatar"><img src="images/users/6.jpg" alt=""></div>
+                  <div class="imes">
+                  	<div class="iauthor">Emma Clark</div>
+                    <div class="itext">Will you pay by credit card?</div>
+                  </div>
+                  <div class="idelete"><a href="#"><span><i class="icon-remove"></i></span></a></div>
+                  <div class="clear"></div>
+                </div>
+                <div class="imessage">
+                  <div class="iavatar"><img src="images/users/2.jpg" alt=""></div>
+                  <div class="imes">
+                  	<div class="iauthor">Blake Washington</div>
+                    <div class="itext">Can I help you?</div>
+                  </div>
+                  <div class="idelete"><a href="#"><span><i class="icon-remove"></i></span></a></div>
+                  <div class="clear"></div>
+                </div>
+                
+                <div class="ichat-link"><a href="#">InBox</a> <a href="#">OutBox</a> <a href="#">Spam</a> <a href="#">Trash</a>
+                <div class="clear"></div>
+                </div>
+                
+                </div>
+                <a href="#" class="iview">View all</a><a href="#" class="imark">Mark all read</a>
+               
+              </div>
+            
+            </div>
+          </div>
+          <!--Messages END--> 
+          
+          <!--Recent Activity Start-->
+           <div class="btn-group pull-left hide-mobile" >
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+    	     	<span class="notification">77</span><span class="triangle-1"></span><i class="icon-bell"></i><span class="caret"></span>
+            </a>
+            <div class="dropdown-menu">
+            
+              <span class="triangle-2"></span>
+              <div class="ichat">
+               <div class="ichat-messages">
+               	<div class="ichat-title">
+                  <div class="pull-left">Recent Activity</div>
+                  <div class="pull-right"><span>Update 14*</span></div>
+                  <div class="clear"></div>
+                </div>
+                
+                <div class="r_activity">
+                <div class="imessage">
+                  <div class="r_icon"><a href="#"><i class="icon-camera"></i></a></div>
+                  <div class="r_info">
+                  	<div class="r_name"><strong>Alan Cook</strong> a new photo</div>
+                    <div class="r_text"><i class="icon-time"></i> 3 hours ago</div>
+                    <div class="r_link"><a href="#">View...</a></div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div class="imessage">
+                  <div class="r_icon"><a href="#"><i class="icon-thumbs-up"></i></a></div>
+                  <div class="r_info">
+                  	<div class="r_name"><strong>Isaac Donaldson</strong> like: BMW E36</div>
+                    <div class="r_text"><i class="icon-time"></i> 5 hours ago</div>
+                    <div class="r_link"><a href="#">View...</a></div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div class="imessage">
+                  <div class="r_icon"><a href="#"><i class="icon-user"></i></a></div>
+                  <div class="r_info">
+                  	<div class="r_name">Registered new user</div>
+                    <div class="r_text"><i class="icon-time"></i> 15th of May - 06:21</div>
+                    <div class="r_link"><a href="#">View...</a></div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                </div>
+               
+                
+                </div>
+                <a href="#" class="iview">View all</a><a href="#" class="imark">Mark all read</a>
+               
+              </div>
+            
+            </div>
+          </div>
+          <!--Recent Activity END--> 
+            
+          </div><!--Notifications END-->
+            
+           <!--Button User Start-->  
+		   <div class="btn-group pull-right" >
+            <a class="btn btn-profile dropdown-toggle" id="button-profile" data-toggle="dropdown" href="#">
+              <span class="name-user"><strong>Welcome</strong>, Alan Cook</span> 
+              <span class="avatar"><img src="images/users/1.jpg" alt="" ></span> 
+              <span class="caret"></span>
+            </a>
+            <div class="dropdown-menu" id="prof_dropdown">
+            <div class="item_m"><span class="caret"></span></div>
+            <ul class="clear_ul" >
+              <li><a href="#"><i class="icon-globe"></i> Home</a></li>
+              <li><a href="#"><i class="icon-comments"></i> Messages</a></li>
+              <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
+              <li><a href="index.html"><i class="icon-off"></i> Sign Out</a></li>
+            </ul>
+            </div>
+          </div>
+          <!--Button User END-->  
+          
+          </div>
+    </div>
+    <!--Header END-->
+
+    
+    <!--Sidebar Start--> 
+	<div id="sidebar">
+      <ul class="menu-sidebar">
+       <li><a href="dashboard.html"><i class="icon-home"></i> <span>General</span></a></li>
+       <li><a href="ui.html"><i class="icon-group"></i> <span>UI </span></a></li>
+       <li><a href="forms.html" class="active"><i class="icon-edit"></i> <span>Forms</span></a></li>
+       <li><a href="widgets.html"><i class="icon-briefcase"></i> <span>Others</span></a></li>
+       <li><a href="error_404.html"><i class="icon-warning-sign"></i> <span>Errors</span></a></li>
+       <li><a href="messages.html"><i class="icon-gift"></i> <span>Bonus</span></a></li>
+      </ul>
+
+    
+    </div>
+    <!--Sidebar END-->
+    
+    <!--Content Start-->
+	<div id="content">
+    
+    	    
+	 <!--SpeedBar Start-->
+     <div class="speedbar">
+     <div class="speedbar-content">
+     
+     <ul class="menu-drop">
+     			<li><a href="#"><i class="icon-chevron-down"></i></a>
+               		<ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="charts.html">Charts</a></li>
+                        <li><a href="gallery.html">Image Gallery</a></li>
+                        <li><a href="calendar.html">Calendar</a></li>
+                        <li><a href="ui.html">UI elements</a></li>
+                        <li><a href="icons.html">Icons</a></li>
+                        <li><a href="buttons.html">Buttons</a></li>
+                        <li><a href="grids.html">Grids</a></li>
+                        <li><a href="forms.html">Inputs & elements</a></li>
+                        <li><a href="form_validation.html">Validation</a></li>
+                        <li><a href="wizard.html">Wizard</a></li>
+                        <li><a href="file_manager.html">File Manager</a></li>
+                        <li><a href="conversation.html">Conversation</a></li>
+                        <li><a href="widgets.html">Widgets</a></li>
+                        <li><a href="typography.html">Typography</a></li>
+                        <li><a href="tables.html">Tables</a></li>
+                        <li><a href="datatables.html">DataTables</a></li>
+                        <li><a href="error_404.html">Error 404</a></li>
+                        <li><a href="error_500.html">Error 500</a></li>
+                        <li><a href="error_503.html">Error 503</a></li>
+                        <li><a href="error_offline.html">Error Offline</a></li>
+                        <li><a href="messages.html">Messages</a></li>
+                        <li><a href="search.html">Search</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="stream.html">Stream</a></li>
+                        <li><a href="invoice.html">Invoice</a></li>
+                    </ul>  
+                </li>
+     </ul>
+     
+     <ul class="menu-speedbar">
+    	 <li><a href="forms.html" class="act_link">Inputs & elements</a></li>
+         <li><a href="form_validation.html">Validation</a></li>
+         <li><a href="wizard.html">Wizard</a></li>
+         <li><a href="file_manager.html">File Manager</a></li>
+     </ul>
+
+     
+     </div>
+     </div>
+     <!--SpeedBar END-->
+     
+     <!--Search Start-->   
+     <div class="search">
+     <form class="search-form">
+     	<input type="text" name="" value="" placeholder="Enter keywords">
+     </form>
+	 <div class="clear"></div>	
+     </div>
+     <!--Search END-->
+     
+     <!--CONTENT MAIN START-->
+     <div class="content">
+        
+        <!--Input fields Start-->
+        <div class="grid">
+          <div class="grid-title">
+            <div class="pull-left">Input fields</div>
+            <div class="pull-right"></div>
+            <div class="clear"></div>
+          </div>
+          <div class="grid-content">
+            	<div class="formRow">
+                        <label>Input text: </label>
+                        <div class="formRight">
+                            <input type="text" id="name" name="name"  class="span"> 
+                        </div>
+                 </div>
+                 
+                 <div class="formRow">
+                        <label>Input password:</label>
+                        <div class="formRight">
+                            <input type="password" id="pass1" name="pass1" class="span"> 
+                        </div>
+                 </div>
+                 <div class="formRow">
+                        <label>Input - placeholder:</label>
+                        <div class="formRight">
+                            <input type="text" class="span" placeholder="text"> 
+                        </div>
+                 </div>
+                 <div class="formRow">
+                        <label>Predefined value:</label>
+                        <div class="formRight">
+                            <input type="text" class="span" value="http://"> 
+                        </div>
+                 </div>
+                 <div class="formRow">
+                        <label>Max 10 characters:</label>
+                        <div class="formRight">
+                            <input type="text" class="span" maxlength="10"> 
+                        </div>
+                 </div>
+                 <div class="formRow">
+                        <label>Disabled field:</label>
+                        <div class="formRight">
+                            <input type="text" class="span" value="message" disabled> 
+                        </div>
+                 </div>
+            	 <div class="formRow">
+                        <label>Select (default):</label>
+                        <div class="formRight">
+                         <select class="span_select"> 
+                            <option value="1">Some text goes here</option>
+                            <option value="2">Another choice could be here</option>
+                        </select>   
+                        </div>
+                 </div>
+                 <div class="formRow">
+                        <label>Multiple select (default):</label>
+                        <div class="formRight">
+                         <SELECT class="span_select" multiple >
+                         <OPTION VALUE="o1">Some text goes here</OPTION>
+                         <OPTION VALUE="o2">Option 2</OPTION>
+                         <OPTION VALUE="o3">Option 3</OPTION>
+                         <OPTION VALUE="o4">Option 4</OPTION>
+                         <OPTION VALUE="o5">Option 5</OPTION>
+                         <OPTION VALUE="o6">Option 6</OPTION>
+                        </SELECT> 
+                        </div>
+                 </div>
+            	 <div class="formRow">
+                        <label>Usual textarea:</label>
+                        <div class="formRight">
+                            <textarea  class="span" name="message" rows="3"></textarea>
+                        </div>
+                 </div>
+                 
+                 <div class="formRow">
+                        <label>Auto expanding:</label>
+                        <div class="formRight">
+                            <textarea  cols="50" rows="3"  class="resize-text span">Here is some sample text just for view purpose.</textarea>
+                        </div>
+                 </div>
+                 <div class="formRow">
+                        <label>Tags:</label>
+                        <div class="formRight">
+                            <input name="tags" class="tags_input" value="foo,bar,baz" />
+                        </div>
+                 </div>
+                 <div class="clear"></div>
+
+          </div>    
+        </div>
+        <!--Input fields END-->
+        
+                <!--Input fields Start-->
+        <div class="grid">
+          <div class="grid-title">
+            <div class="pull-left">Input fields</div>
+            <div class="pull-right"></div>
+            <div class="clear"></div>
+          </div>
+          <div class="grid-content">
+            	<div class="formRow">
+                        <label>Select:</label>
+                        <div class="formRight">
+                         <select class="chzn-select chosen_select"  >
+                            <option value=""></option> 
+                            <option value="United States">United States</option> 
+                            <option value="United Kingdom">United Kingdom</option> 
+                            <option value="Afghanistan">Afghanistan</option> 
+                            <option value="Albania">Albania</option> 
+                            <option value="Algeria">Algeria</option> 
+                            <option value="American Samoa">American Samoa</option> 
+                            <option value="Andorra">Andorra</option> 
+                            <option value="Angola">Angola</option> 
+                            <option value="Anguilla">Anguilla</option> 
+                            <option value="Antarctica">Antarctica</option> 
+                            <option value="Antigua and Barbuda">Antigua and Barbuda</option> 
+                            <option value="Argentina">Argentina</option> 
+                            <option value="Armenia">Armenia</option> 
+                            <option value="Aruba">Aruba</option> 
+                            <option value="Australia">Australia</option> 
+                            <option value="Austria">Austria</option> 
+                            <option value="Azerbaijan">Azerbaijan</option> 
+                            <option value="Bahamas">Bahamas</option> 
+                            <option value="Bahrain">Bahrain</option> 
+                            <option value="Bangladesh">Bangladesh</option> 
+                            <option value="Haiti">Haiti</option> 
+                            <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option> 
+                            <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option> 
+                            <option value="Honduras">Honduras</option> 
+                            <option value="Hong Kong">Hong Kong</option> 
+                            <option value="Hungary">Hungary</option> 
+                            <option value="Iceland">Iceland</option> 
+                            <option value="Tanzania, United Republic of">Tanzania, United Republic of</option> 
+                            <option value="Thailand">Thailand</option> 
+                            <option value="Timor-leste">Timor-leste</option> 
+                            <option value="Togo">Togo</option> 
+                            <option value="Tokelau">Tokelau</option> 
+                            <option value="Tonga">Tonga</option> 
+                            <option value="Trinidad and Tobago">Trinidad and Tobago</option> 
+                            <option value="Tunisia">Tunisia</option> 
+                            <option value="Turkey">Turkey</option> 
+                            <option value="Turkmenistan">Turkmenistan</option> 
+                            <option value="Turks and Caicos Islands">Turks and Caicos Islands</option> 
+                            <option value="Tuvalu">Tuvalu</option> 
+                            <option value="Uganda">Uganda</option> 
+                            <option value="Ukraine">Ukraine</option> 
+                            <option value="United Arab Emirates">United Arab Emirates</option> 
+                            <option value="United Kingdom">United Kingdom</option> 
+                            <option value="United States">United States</option> 
+                            <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option> 
+                            <option value="Uruguay">Uruguay</option> 
+                            <option value="Uzbekistan">Uzbekistan</option> 
+                            <option value="Vanuatu">Vanuatu</option> 
+                            <option value="Venezuela">Venezuela</option> 
+                            <option value="Viet Nam">Viet Nam</option> 
+                            <option value="Virgin Islands, British">Virgin Islands, British</option> 
+                            <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option> 
+                            <option value="Wallis and Futuna">Wallis and Futuna</option> 
+                            <option value="Western Sahara">Western Sahara</option> 
+                            <option value="Yemen">Yemen</option> 
+                            <option value="Zambia">Zambia</option> 
+                            <option value="Zimbabwe">Zimbabwe</option>
+                          </select>  
+                        </div>
+                 </div>
+                 <div class="formRow">
+                        <label>Select optgroup:</label>
+                        <div class="formRight">
+                         <select data-placeholder="Your Favorite Football Team" class="chzn-select chosen_select" tabindex="5">
+                            <option value=""></option>
+                            <optgroup label="NFC EAST">
+                              <option>Dallas Cowboys</option>
+                              <option>New York Giants</option>
+                              <option>Philadelphia Eagles</option>
+                              <option>Washington Redskins</option>
+                            <optgroup>
+                            <optgroup label="NFC NORTH">
+                              <option>Chicago Bears</option>
+                              <option>Detroit Lions</option>
+                              <option>Green Bay Packers</option>
+                              <option>Minnesota Vikings</option>
+                            </optgroup>
+                            <optgroup label="NFC SOUTH">
+                              <option>Atlanta Falcons</option>
+                              <option>Carolina Panthers</option>
+                              <option>New Orleans Saints</option>
+                              <option>Tampa Bay Buccaneers</option>
+                            </optgroup>
+                            <optgroup label="NFC WEST">
+                              <option>Arizona Cardinals</option>
+                              <option>St. Louis Rams</option>
+                              <option>San Francisco 49ers</option>
+                              <option>Seattle Seahawks</option>
+                            </optgroup>
+                            <optgroup label="AFC EAST">
+                              <option>Buffalo Bills</option>
+                              <option>Miami Dolphins</option>
+                              <option>New England Patriots</option>
+                              <option>New York Jets</option>
+                            </optgroup>
+                            <optgroup label="AFC NORTH">
+                              <option>Baltimore Ravens</option>
+                              <option>Cincinnati Bengals</option>
+                              <option>Cleveland Browns</option>
+                              <option>Pittsburgh Steelers</option>
+                            </optgroup>
+                            <optgroup label="AFC SOUTH">
+                              <option>Houston Texans</option>
+                              <option>Indianapolis Colts</option>
+                              <option>Jacksonville Jaguars</option>
+                              <option>Tennessee Titans</option>
+                            </optgroup>
+                            <optgroup label="AFC WEST">
+                              <option>Denver Broncos</option>
+                              <option>Kansas City Chiefs</option>
+                              <option>Oakland Raiders</option>
+                              <option>San Diego Chargers</option>
+                            </optgroup>
+                          </select>   
+                        </div>
+                 </div>
+                 <div class="formRow">
+                        <label>Multiple select:</label>
+                        <div class="formRight">
+                         <select data-placeholder="Your Favorite Types of Bear"  multiple class="chzn-select chosen_select" tabindex="8">
+                            <option value=""></option>
+                            <option>American Black Bear</option>
+                            <option>Asiatic Black Bear</option>
+                            <option>Brown Bear</option>
+                            <option>Giant Panda</option>
+                            <option>Sloth Bear</option>
+                            <option disabled>Sun Bear</option>
+                            <option>Polar Bear</option>
+                            <option disabled>Spectacled Bear</option>
+                          </select>
+                        </div>
+                 </div>
+                 <div class="formRow">
+                        <label>Multiple select optgroup:</label>
+                        <div class="formRight">
+                         <select data-placeholder="Your Favorite Football Teams" class="chzn-select chosen_select" multiple tabindex="6">
+                            <option value=""></option>
+                            <optgroup label="NFC EAST">
+                              <option>Dallas Cowboys</option>
+                              <option>New York Giants</option>
+                              <option>Philadelphia Eagles</option>
+                              <option>Washington Redskins</option>
+                            <optgroup>
+                            <optgroup label="NFC NORTH">
+                              <option>Chicago Bears</option>
+                              <option>Detroit Lions</option>
+                              <option>Green Bay Packers</option>
+                              <option>Minnesota Vikings</option>
+                            </optgroup>
+                            <optgroup label="NFC SOUTH">
+                              <option>Atlanta Falcons</option>
+                              <option>Carolina Panthers</option>
+                              <option>New Orleans Saints</option>
+                              <option>Tampa Bay Buccaneers</option>
+                            </optgroup>
+                            <optgroup label="NFC WEST">
+                              <option>Arizona Cardinals</option>
+                              <option>St. Louis Rams</option>
+                              <option>San Francisco 49ers</option>
+                              <option>Seattle Seahawks</option>
+                            </optgroup>
+                            <optgroup label="AFC EAST">
+                              <option>Buffalo Bills</option>
+                              <option>Miami Dolphins</option>
+                              <option>New England Patriots</option>
+                              <option>New York Jets</option>
+                            </optgroup>
+                            <optgroup label="AFC NORTH">
+                              <option>Baltimore Ravens</option>
+                              <option>Cincinnati Bengals</option>
+                              <option>Cleveland Browns</option>
+                              <option>Pittsburgh Steelers</option>
+                            </optgroup>
+                            <optgroup label="AFC SOUTH">
+                              <option>Houston Texans</option>
+                              <option>Indianapolis Colts</option>
+                              <option>Jacksonville Jaguars</option>
+                              <option>Tennessee Titans</option>
+                            </optgroup>
+                            <optgroup label="AFC WEST">
+                              <option>Denver Broncos</option>
+                              <option>Kansas City Chiefs</option>
+                              <option>Oakland Raiders</option>
+                              <option>San Diego Chargers</option>
+                            </optgroup>
+                          </select>
+                          
+                          
+                        </div>
+                 </div>                 
+                 <div class="clear"></div>
+
+          </div>    
+        </div>
+        <!--Input fields END-->
+        
+        <!--Additional input fields Start-->
+        <div class="grid">
+          <div class="grid-title">
+            <div class="pull-left">Additional input fields</div>
+            <div class="pull-right"></div>
+            <div class="clear"></div>
+          </div>
+          <div class="grid-content overflow">
+                    <div class="formRow">
+                            <label>Phone Number:</label>
+                            <div class="formRight">
+                                <table>
+                                    <tr>
+                                    <td><input type="text" name="area_code" id="area_code" class="input-small" maxlength="3" size="3" /></td>
+                                    <td>-</td>
+                                    <td><input type="text" name="number1" id="number1" class="input-small" maxlength="3" size="3" /></td>
+                                    <td>-</td>
+                                    <td><input type="text" name="number2" id="number2" class="input-small" maxlength="4" size="5" /></td>
+                                    </tr>
+                                </table>
+                            </div>
+                    </div>
+                    <div class="formRow">
+                            <label>Social Number:</label>
+                            <div class="formRight">
+                                <table>
+                                <tr>
+                                <td><input type="text" name="ssn1" id="ssn1" class="input-small" maxlength="3" size="3" /></td>
+                                <td>-</td>
+                                <td><input type="text" name="ssn2" id="ssn2" class="input-small" maxlength="2" size="3" /></td>
+                                <td>-</td>
+                                <td><input type="text" name="ssn3" id="ssn3" class="input-small" maxlength="4" size="5" /></td>
+                                </tr>
+                                </table> 
+                            </div>
+                    </div>
+                    <div class="formRow">
+                            <label>Text characters only:</label>
+                            <div class="formRight">
+                                <table>
+                                <tr>
+                                <td><input type="text" name="text1" id="text1" class="input-small" maxlength="5" size="4" /></td>
+                                <td>-</td>
+                                <td><input type="text" name="text2" id="text2" class="input-small" maxlength="4" size="4" /></td>
+                                <td>-</td>
+                                <td><input type="text" name="text3" id="text3" class="input-small" maxlength="5" size="4" /></td>
+                                </tr>
+                                </table> 
+                            </div>
+                    </div>
+                    <div class="formRow">
+                            <label>Alpha only:</label>
+                            <div class="formRight">
+                                <table>
+                                <tr>
+                                <td><input type="text" name="alpha1" id="alpha1" class="input-small" maxlength="5" size="4" /></td>
+                                <td>-</td>
+                                <td><input type="text" name="alpha2" id="alpha2" class="input-small" maxlength="5" size="4" /></td>
+                                <td>-</td>
+                                <td><input type="text" name="alpha3" id="alpha3" class="input-small" maxlength="5" size="4" /></td>
+                                <td>-</td>
+                                <td><input type="text" name="alpha4" id="alpha4" class="input-small" maxlength="5" size="4" /></td>
+                                <td>-</td>
+                                <td><input type="text" name="alpha5" id="alpha5" class="input-small" maxlength="5" size="4" /></td>
+                                </tr>
+                                </table>
+                            </div>
+                    </div>
+                    <div class="formRow">
+                            <label>Uppercase letters</label>
+                            <div class="formRight">
+                                <table>
+                                <tr>
+                                <td><input type="text" name="alphanumeric1" id="alphanumeric1" class="input-small" maxlength="5" size="4" /></td>
+                                <td>-</td>
+                                <td><input type="text" name="alphanumeric2" id="alphanumeric2" class="input-small" maxlength="5" size="4" /></td>
+                                <td>-</td>
+                                <td><input type="text" name="alphanumeric3" id="alphanumeric3" class="input-small" maxlength="5" size="4" /></td>
+                                <td>-</td>
+                                <td><input type="text" name="alphanumeric4" id="alphanumeric4" class="input-small" maxlength="5" size="4" /></td>
+                                <td>-</td>
+                                <td><input type="text" name="alphanumeric5" id="alphanumeric5" class="input-small" maxlength="5" size="4" /></td>
+                                </tr>
+                                </table>
+                            </div>
+                    </div>
+                    <div class="formRow">
+                            <label>Any characters:</label>
+                            <div class="formRight">
+                                <table>
+                                <tr>
+                                <td><input type="text" name="all1" id="all1" maxlength="5" class="input-small" size="4" /></td>
+                                <td>-</td>
+                                <td><input type="text" name="all2" id="all2" maxlength="5" class="input-small" size="4" /></td>
+                                <td>-</td>
+                                <td><input type="text" name="all3" id="all3" maxlength="5" class="input-small" size="4" /></td>
+                                <td>-</td>
+                                <td><input type="text" name="all4" id="all4" maxlength="5" class="input-small" size="4" /></td>
+                                <td>-</td>
+                                <td><input type="text" name="all5" id="all5" maxlength="5" class="input-small" size="4" /></td>
+                                </tr>
+                                </table>
+                            </div>
+                    </div>
+                    <div class="formRow">
+                            <label>Regular Expression:</label>
+    
+    
+                            <div class="formRight">
+                               <input type="text" name="regex" id="regex" class="span" maxlength="15" size="13" />
+                            </div>
+                    </div>
+          </div>    
+        </div>
+        <!--Additional input fields END-->
+        
+        <!--Datepicker Start-->
+    <div class="grid">
+	  <div class="grid-title">
+        <div class="pull-left">Datepicker</div>
+        <div class="pull-right"></div>
+        <div class="clear"></div>
+      </div>
+      <div class="grid-content overflow">
+			  <p>Attached to a field with the format specified via options.</p>
+              <div class="well">
+                <input type="text" class="span2" value="02-16-2012" id="dp1" >
+              </div>
+              <p>Attachet to a field with the format specified via data tag.</p>
+              <div class="well">
+                <input type="text" class="span2" value="02/16/12" data-date-format="mm/dd/yy" id="dp2" >
+              </div>
+              <p>As component.</p>
+              <div class="well">
+                  <div class="input-append date" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                    <input class="span2" size="16" type="text" value="12-02-2012" readonly>
+                    <span class="add-on"><i class="icon-th"></i></span>
+                  </div>
+              </div>
+              <p>Attached to other elment then field and using events to work with the date values.</p>
+              <div class="well">
+                
+                
+                <div class="alert alert-error" id="alert">
+                    <strong>Oh snap!</strong>
+                  </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Start date<a href="#" class="btn small" id="dp4" data-date-format="yyyy-mm-dd" data-date="2012-02-20">Change</a></th>
+                            <th>End date<a href="#" class="btn small" id="dp5" data-date-format="yyyy-mm-dd" data-date="2012-02-25">Change</a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="startDate">2012-02-20</td>
+                            <td id="endDate">2012-02-25</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+
+      </div>    
+    </div>
+    <!--Datepicker END-->
+    
+    <!--Colorpicker  Start-->
+    <div class="grid">
+	  <div class="grid-title">
+        <div class="pull-left">Colorpicker </div>
+        <div class="pull-right"></div>
+        <div class="clear"></div>
+      </div>
+      <div class="grid-content overflow">
+			  <p>Attached to a field with hex format specified via options.</p>
+              <div class="well">
+                <input type="text" class="span2" value="#8fff00" id="cp1" >
+              </div>
+              <p>Attachet to a field with the rgba format specified via data tag.</p>
+              <div class="well">
+                <input type="text" class="span2" value="rgb(0,194,255,0.78)" id="cp2" data-color-format="rgba" >
+              </div>
+              <p>As component.</p>
+              <div class="well">
+                <div class="input-append color" data-color="rgb(255, 146, 180)" data-color-format="rgb" id="cp3">
+                    <input type="text" class="span2" value="" readonly >
+                    <span class="add-on"><i style="background-color: rgb(255, 146, 180)"></i></span>
+                </div>
+              </div>
+              
+
+      </div>    
+    </div>
+    <!--Colorpicker  END-->
+    
+    <div class="row-fluid">
+    <!--Style forms of validation  Start-->
+    <div class="grid span6">
+	  <div class="grid-title">
+        <div class="pull-left">Style forms of validation</div>
+        <div class="pull-right"></div>
+        <div class="clear"></div>
+      </div>
+      <div class="grid-content">
+		<div class="control-group warning">
+            <label class="control-label" for="inputWarning">Input with warning</label>
+            <div class="controls">
+              <input type="text" id="inputWarning">
+              <span class="help-inline">Something may have gone wrong</span>
+            </div>
+          </div>
+          <div class="control-group error">
+            <label class="control-label" for="inputError">Input with error</label>
+            <div class="controls">
+              <input type="text" id="inputError">
+              <span class="help-inline">Please correct the error</span>
+            </div>
+          </div>
+          <div class="control-group success">
+            <label class="control-label" for="inputsuccess">Input with success</label>
+            <div class="controls">
+              <input type="text" id="inputsuccess">
+              <span class="help-inline">Woohoo!</span>
+            </div>
+          </div>
+          <div class="control-group success">
+            <label class="control-label" for="selectError">Select with success</label>
+            <div class="controls">
+              <select id="selectError">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+              <span class="help-inline">Woohoo!</span>
+            </div>
+          </div>
+
+      </div>    
+    </div>
+    <!--Style forms of validation  END-->
+    
+    <!--Form help text  Start-->
+    <div class="grid span6">
+	  <div class="grid-title">
+        <div class="pull-left">Form help text</div>
+        <div class="pull-right"></div>
+        <div class="clear"></div>
+      </div>
+      <div class="grid-content">
+		 <div class="control-group">
+            <label class="control-label" for="prependedInput">Prepended text</label>
+            <div class="controls">
+              <div class="input-append">
+                <input class="span7" id="prependedInput" size="16" type="text"><span class="add-on">@</span>
+              </div>
+              <p class="help-block">Here's some help text</p>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="appendedInput">Appended text</label>
+            <div class="controls">
+              <div class="input-append">
+                <input class="span7" id="appendedInput" size="16" type="text"><span class="add-on">.00</span>
+              </div>
+              <span class="help-inline">Here's more help text</span>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="appendedPrependedInput">Append and prepend</label>
+            <div class="controls">
+              <div class="input-prepend input-append">
+                <span class="add-on">$</span><input class="span7" id="appendedPrependedInput" size="16" type="text"><span class="add-on">.00</span>
+              </div>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="appendedInputButton">Append with button</label>
+            <div class="controls">
+              <div class="input-append">
+                <input class="span7" id="appendedInputButton" size="16" type="text"><button class="btn" type="button">Go!</button>
+              </div>
+            </div>
+          </div>   
+
+      </div>    
+    </div>
+    <!--Form help text  END-->
+    </div>
+    
+    <!--Checkbox and Radio  Start-->
+    <div class="grid">
+	  <div class="grid-title">
+        <div class="pull-left">Checkbox and Radio</div>
+        <div class="pull-right"></div>
+        <div class="clear"></div>
+      </div>
+      <div class="grid-content overflow">
+		      <div class="formRow">
+
+                        <div class=" distance">
+
+						 <p>
+                           <input type="radio" id="r2" name="rr" checked="checked" />
+            			   <label for="r2"><span></span>Selected radio</label>
+                         </p>
+
+                         <p>
+                           <input type="radio" id="r1" name="rr" />
+                           <label for="r1"><span></span> Normal state</label>
+                         </p>
+						 <p>
+						   <input type="checkbox" id="c2" name="cc" checked="checked" />
+            			   <label for="c2"><span></span> Checked</label>
+                         </p>
+                         <p>
+						   <input type="checkbox" id="c1" name="cc" />
+            			   <label for="c1"><span></span> Normal state</label>
+                         </p>
+
+
+                        </div>
+
+                 </div>
+              
+
+      </div>    
+    </div>
+    <!--Checkbox and Radio  END-->
+    
+    <!--WYSIWYG Editor  Start-->
+    <div class="grid">
+	  <div class="grid-title">
+        <div class="pull-left">WYSIWYG Editor</div>
+        <div class="pull-right"></div>
+        <div class="clear"></div>
+      </div>
+      <div class="grid-content overflow">
+		      <textarea id="i1" name="param_name" class="editor" style="width:100%;"></textarea>
+
+      </div>    
+    </div>
+    <!--WYSIWYG Editor  END-->
+
+        
+ 
+  
+     </div>
+     <!--CONTENT MAIN END-->
+
+    </div>
+    <!--Content END-->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+   
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/bootstrap-colorpicker.js"></script>
+    <script src="js/google-code-prettify/prettify.js"></script>
+   
+    <script src="js/jquery.flot.min.js"></script>
+    <script src="js/jquery.flot.pie.js"></script>
+    <script src="js/jquery.flot.orderBars.js"></script>
+    <script src="js/jquery.flot.resize.js"></script>
+    <script src="js/graphtable.js"></script>
+    <script src="js/fullcalendar.min.js"></script>
+    <script src="js/chosen.jquery.min.js"></script>
+    <script src="js/autoresize.jquery.min.js"></script>
+    <script src="js/jquery.tagsinput.min.js"></script>
+    <script src="js/jquery.autotab.js"></script>
+    <script src="js/elfinder/js/elfinder.min.js" charset="utf-8"></script>
+	<script src="js/tiny_mce/tiny_mce.js"></script>
+    <script src="js/validation/languages/jquery.validationEngine-en.js" charset="utf-8"></script>
+	<script src="js/validation/jquery.validationEngine.js" charset="utf-8"></script>
+    <script src="js/jquery.jgrowl_minimized.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/export/ZeroClipboard/ZeroClipboard.js"></script>
+    <script src="js/export/js/TableTools.js"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+    <script src="js/jquery.jscrollpane.min.js"></script>
+    <script src="js/jquery.stepy.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/raphael.2.1.0.min.js"></script>
+    <script src="js/justgage.1.0.1.min.js"></script>
+	<script src="js/glisse.js"></script>
+	<script src="js/styleswitcher.js"></script>
+    
+	<script src="js/application.js"></script>
+
+
+  </body>
+</html>
+

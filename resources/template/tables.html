@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Sweet Dreams - Tables</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/jquery-ui-1.8.16.custom.css" media="screen"  />
+    <link rel="stylesheet" href="css/fullcalendar.css" media="screen"  />
+    <link rel="stylesheet" href="css/chosen.css" media="screen"  />
+    <link rel="stylesheet" href="css/datepicker.css" >
+    <link rel="stylesheet" href="css/colorpicker.css">
+    <link rel="stylesheet" href="css/glisse.css?1.css">
+    <link rel="stylesheet" href="css/jquery.jgrowl.css">
+    <link rel="stylesheet" href="js/elfinder/css/elfinder.css" media="screen" />
+    <link rel="stylesheet" href="css/jquery.tagsinput.css" />
+    <link rel="stylesheet" href="css/demo_table.css" >
+    <link rel="stylesheet" href="js/export/css/TableTools.css" >
+    <link rel="stylesheet" href="css/validationEngine.jquery.css">
+    <link rel="stylesheet" href="css/jquery.stepy.css" />
+    
+	<link rel="stylesheet" href="css/icon/font-awesome.css">    <link rel="stylesheet" href="css/bootstrap-responsive.css">
+    
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="green-theme" href="css/color/green.css" />
+	<link rel="alternate stylesheet" type="text/css" media="screen" title="red-theme" href="css/color/red.css" />
+	<link rel="alternate stylesheet" type="text/css" media="screen" title="black-theme" href="css/color/black.css" />
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="orange-theme" href="css/color/orange.css" />
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="purple-theme" href="css/color/purple.css" />
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="silver-theme" href="css/color/silver.css" />
+    <link rel="alternate stylesheet" type="text/css" media="screen" title="metro-theme" href="css/color/metro.css" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lte IE 8]><script type="text/javascript" src="/js/excanvas.min.js"></script><![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/images/icons/favicon.ico">
+    
+  </head>
+
+  <body>
+<!-- switcher color -->
+<div id="slideout">
+  <a class="link-settings-colors"><i class="icon-cog"></i></a>
+  <div id="slideout_inner">
+    <form id="switchform">
+      <ul>
+            <li><a href="javascript:chooseStyle('none', 30)" class="colorblue">Default style</a></li>
+            <li><a href="javascript:chooseStyle('orange-theme', 30)" class="colororange">Orange theme</a></li>
+            <li><a href="javascript:chooseStyle('silver-theme', 30)" class="colorsilver">Silver theme</a></li>
+            <li><a href="javascript:chooseStyle('black-theme', 30)" class="colorblack">Black theme</a></li>
+            <li><a href="javascript:chooseStyle('green-theme', 30)" class="colorgreen">Green theme</a></li>
+            <li><a href="javascript:chooseStyle('purple-theme', 30)" class="colorpurple">Purple theme</a></li>
+            <li><a href="javascript:chooseStyle('red-theme', 30)" class="colorred">Red theme</a></li>
+            <li><a href="javascript:chooseStyle('metro-theme', 30)" class="colormetro">Metro theme</a></li>
+        </ul>
+      </form>
+  </div>
+</div>
+<!-- switcher color END-->
+
+	<!--Header Start-->
+	<div class="header" >
+    		
+           <a href="dashboard.html" class="logo"><h1>SWEET DREAMS</h1></a>
+           
+           <div class="pull-right">
+           
+           <!--Notifications Start-->  
+           <div class="notifications-head">
+           
+           <!--Messages Start-->
+           <div class="btn-group m_left hide-mobile" >
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+    	     	<span class="notification">531</span><span class="triangle-1"></span><i class="icon-comments"></i><span class="caret"></span>
+            </a>
+            <div class="dropdown-menu">
+            
+              <span class="triangle-2"></span>
+              <div class="ichat">
+               <div class="ichat-messages">
+               	<div class="ichat-title">
+                  <div class="pull-left">New Messages</div>
+                  <div class="pull-right"><span>Update 4*</span></div>
+                  <div class="clear"></div>
+                </div>
+                
+                <div class="imessage">
+                  <div class="iavatar"><img src="images/users/1.jpg" alt=""></div>
+                  <div class="imes">
+                  	<div class="iauthor">Alan Cook</div>
+                    <div class="itext">All right. Thank you.</div>
+                  </div>
+                  <div class="idelete"><a href="#"><span><i class="icon-remove"></i></span></a></div>
+                  <div class="clear"></div>
+                </div>
+                <div class="imessage">
+                  <div class="iavatar"><img src="images/users/6.jpg" alt=""></div>
+                  <div class="imes">
+                  	<div class="iauthor">Emma Clark</div>
+                    <div class="itext">Will you pay by credit card?</div>
+                  </div>
+                  <div class="idelete"><a href="#"><span><i class="icon-remove"></i></span></a></div>
+                  <div class="clear"></div>
+                </div>
+                <div class="imessage">
+                  <div class="iavatar"><img src="images/users/2.jpg" alt=""></div>
+                  <div class="imes">
+                  	<div class="iauthor">Blake Washington</div>
+                    <div class="itext">Can I help you?</div>
+                  </div>
+                  <div class="idelete"><a href="#"><span><i class="icon-remove"></i></span></a></div>
+                  <div class="clear"></div>
+                </div>
+                
+                <div class="ichat-link"><a href="#">InBox</a> <a href="#">OutBox</a> <a href="#">Spam</a> <a href="#">Trash</a>
+                <div class="clear"></div>
+                </div>
+                
+                </div>
+                <a href="#" class="iview">View all</a><a href="#" class="imark">Mark all read</a>
+               
+              </div>
+            
+            </div>
+          </div>
+          <!--Messages END--> 
+          
+          <!--Recent Activity Start-->
+           <div class="btn-group pull-left hide-mobile" >
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+    	     	<span class="notification">77</span><span class="triangle-1"></span><i class="icon-bell"></i><span class="caret"></span>
+            </a>
+            <div class="dropdown-menu">
+            
+              <span class="triangle-2"></span>
+              <div class="ichat">
+               <div class="ichat-messages">
+               	<div class="ichat-title">
+                  <div class="pull-left">Recent Activity</div>
+                  <div class="pull-right"><span>Update 14*</span></div>
+                  <div class="clear"></div>
+                </div>
+                
+                <div class="r_activity">
+                <div class="imessage">
+                  <div class="r_icon"><a href="#"><i class="icon-camera"></i></a></div>
+                  <div class="r_info">
+                  	<div class="r_name"><strong>Alan Cook</strong> a new photo</div>
+                    <div class="r_text"><i class="icon-time"></i> 3 hours ago</div>
+                    <div class="r_link"><a href="#">View...</a></div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div class="imessage">
+                  <div class="r_icon"><a href="#"><i class="icon-thumbs-up"></i></a></div>
+                  <div class="r_info">
+                  	<div class="r_name"><strong>Isaac Donaldson</strong> like: BMW E36</div>
+                    <div class="r_text"><i class="icon-time"></i> 5 hours ago</div>
+                    <div class="r_link"><a href="#">View...</a></div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div class="imessage">
+                  <div class="r_icon"><a href="#"><i class="icon-user"></i></a></div>
+                  <div class="r_info">
+                  	<div class="r_name">Registered new user</div>
+                    <div class="r_text"><i class="icon-time"></i> 15th of May - 06:21</div>
+                    <div class="r_link"><a href="#">View...</a></div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                </div>
+               
+                
+                </div>
+                <a href="#" class="iview">View all</a><a href="#" class="imark">Mark all read</a>
+               
+              </div>
+            
+            </div>
+          </div>
+          <!--Recent Activity END--> 
+            
+          </div><!--Notifications END-->
+            
+           <!--Button User Start-->  
+		   <div class="btn-group pull-right" >
+            <a class="btn btn-profile dropdown-toggle" id="button-profile" data-toggle="dropdown" href="#">
+              <span class="name-user"><strong>Welcome</strong>, Alan Cook</span> 
+              <span class="avatar"><img src="images/users/1.jpg" alt="" ></span> 
+              <span class="caret"></span>
+            </a>
+            <div class="dropdown-menu" id="prof_dropdown">
+            <div class="item_m"><span class="caret"></span></div>
+            <ul class="clear_ul" >
+              <li><a href="#"><i class="icon-globe"></i> Home</a></li>
+              <li><a href="#"><i class="icon-comments"></i> Messages</a></li>
+              <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
+              <li><a href="index.html"><i class="icon-off"></i> Sign Out</a></li>
+            </ul>
+            </div>
+          </div>
+          <!--Button User END-->  
+          
+          </div>
+    </div>
+    <!--Header END-->
+
+    
+    <!--Sidebar Start--> 
+	<div id="sidebar">
+      <ul class="menu-sidebar">
+       <li><a href="dashboard.html"><i class="icon-home"></i> <span>General</span></a></li>
+       <li><a href="ui.html"><i class="icon-group"></i> <span>UI </span></a></li>
+       <li><a href="forms.html"><i class="icon-edit"></i> <span>Forms</span></a></li>
+       <li><a href="widgets.html" class="active"><i class="icon-briefcase"></i> <span>Others</span></a></li>
+       <li><a href="error_404.html"><i class="icon-warning-sign"></i> <span>Errors</span></a></li>
+       <li><a href="messages.html"><i class="icon-gift"></i> <span>Bonus</span></a></li>
+      </ul>
+
+    
+    </div>
+    <!--Sidebar END-->
+    
+    <!--Content Start-->
+	<div id="content">
+    
+    	    
+	 <!--SpeedBar Start-->
+     <div class="speedbar">
+     <div class="speedbar-content">
+     
+     <ul class="menu-drop">
+     			<li><a href="#"><i class="icon-chevron-down"></i></a>
+               		<ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="charts.html">Charts</a></li>
+                        <li><a href="gallery.html">Image Gallery</a></li>
+                        <li><a href="calendar.html">Calendar</a></li>
+                        <li><a href="ui.html">UI elements</a></li>
+                        <li><a href="icons.html">Icons</a></li>
+                        <li><a href="buttons.html">Buttons</a></li>
+                        <li><a href="grids.html">Grids</a></li>
+                        <li><a href="forms.html">Inputs & elements</a></li>
+                        <li><a href="form_validation.html">Validation</a></li>
+                        <li><a href="wizard.html">Wizard</a></li>
+                        <li><a href="file_manager.html">File Manager</a></li>
+                        <li><a href="conversation.html">Conversation</a></li>
+                        <li><a href="widgets.html">Widgets</a></li>
+                        <li><a href="typography.html">Typography</a></li>
+                        <li><a href="tables.html">Tables</a></li>
+                        <li><a href="datatables.html">DataTables</a></li>
+                        <li><a href="error_404.html">Error 404</a></li>
+                        <li><a href="error_500.html">Error 500</a></li>
+                        <li><a href="error_503.html">Error 503</a></li>
+                        <li><a href="error_offline.html">Error Offline</a></li>
+                        <li><a href="messages.html">Messages</a></li>
+                        <li><a href="search.html">Search</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="stream.html">Stream</a></li>
+                        <li><a href="invoice.html">Invoice</a></li>
+                    </ul>  
+                </li>
+     </ul>
+     
+     <ul class="menu-speedbar">
+    	 <li><a href="widgets.html">Widgets</a></li>
+         <li><a href="typography.html">Typography</a></li>
+         <li><a href="tables.html" class="act_link">Tables</a></li>
+         <li><a href="datatables.html">DataTables</a></li>
+         
+     </ul>
+
+     
+     </div>
+     </div>
+     <!--SpeedBar END-->
+     
+     <!--Search Start-->   
+     <div class="search">
+     <form class="search-form">
+     	<input type="text" name="" value="" placeholder="Enter keywords">
+     </form>
+	 <div class="clear"></div>	
+     </div>
+     <!--Search END-->
+     
+     <!--CONTENT MAIN START-->
+     <div class="content">
+        
+        <!--Default table styles Start-->
+        <div class="grid">
+          <div class="grid-title">
+            <div class="pull-left">Default table styles</div>
+            <div class="pull-right"></div>
+            <div class="clear"></div>
+          </div>
+          <table class="table table-mod">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table> 
+         
+        </div>
+        <!--Default table styles END-->
+        
+        <!--Default table styles 2 Start-->
+        <div class="grid">
+          <div class="grid-title">
+            <div class="pull-left">Default table styles 2</div>
+            <div class="pull-right"></div>
+            <div class="clear"></div>
+          </div>
+          <table class="table table-mod-2">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table> 
+         
+        </div>
+        <!--Default table styles 2 END-->
+        
+        <!--Striped table Start-->
+        <div class="grid">
+          <div class="grid-title">
+            <div class="pull-left">Striped table</div>
+            <div class="pull-right"></div>
+            <div class="clear"></div>
+          </div>
+          <table class="table table-striped table-mod">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+         
+        </div>
+        <!--Striped table END-->  
+        
+         <!--Striped table 2 Start-->
+        <div class="grid">
+          <div class="grid-title">
+            <div class="pull-left">Striped table 2</div>
+            <div class="pull-right"></div>
+            <div class="clear"></div>
+          </div>
+          <table class="table table-striped table-mod-2">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+         
+        </div>
+        <!--Striped table 2 END-->  
+        
+        <!--Bordered table Start-->
+        <div class="grid">
+          <div class="grid-title">
+            <div class="pull-left">Bordered table</div>
+            <div class="pull-right"></div>
+            <div class="clear"></div>
+          </div>
+          <div class="grid-content">
+          <table class="table table-bordered table-mod">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@TwBootstrap</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+         
+        </div>
+        <!--Bordered table END-->
+        
+        <!--Condensed table Start-->
+        <div class="grid">
+          <div class="grid-title">
+            <div class="pull-left">Condensed table</div>
+            <div class="pull-right"></div>
+            <div class="clear"></div>
+          </div>
+          
+          <table class="table table-condensed table-mod">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+         
+        </div>
+        <!--Condensed table END-->
+        
+        <!--Combine them all Start-->
+        <div class="grid">
+          <div class="grid-title">
+            <div class="pull-left">Combine them all</div>
+            <div class="pull-right"></div>
+            <div class="clear"></div>
+          </div>
+          <div class="grid-content">
+          <table class="table table-striped table-bordered table-condensed table-mod">
+            <thead>
+              <tr>
+                <th></th>
+                <th colspan="2">Full name</th>
+                <th></th>
+              </tr>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+         
+        </div>
+        <!--Combine them all END-->
+ 
+  
+     </div>
+     <!--CONTENT MAIN END-->
+
+    </div>
+    <!--Content END-->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+   
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/bootstrap-colorpicker.js"></script>
+    <script src="js/google-code-prettify/prettify.js"></script>
+   
+    <script src="js/jquery.flot.min.js"></script>
+    <script src="js/jquery.flot.pie.js"></script>
+    <script src="js/jquery.flot.orderBars.js"></script>
+    <script src="js/jquery.flot.resize.js"></script>
+    <script src="js/graphtable.js"></script>
+    <script src="js/fullcalendar.min.js"></script>
+    <script src="js/chosen.jquery.min.js"></script>
+    <script src="js/autoresize.jquery.min.js"></script>
+    <script src="js/jquery.tagsinput.min.js"></script>
+    <script src="js/jquery.autotab.js"></script>
+    <script src="js/elfinder/js/elfinder.min.js" charset="utf-8"></script>
+	<script src="js/tiny_mce/tiny_mce.js"></script>
+    <script src="js/validation/languages/jquery.validationEngine-en.js" charset="utf-8"></script>
+	<script src="js/validation/jquery.validationEngine.js" charset="utf-8"></script>
+    <script src="js/jquery.jgrowl_minimized.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/export/ZeroClipboard/ZeroClipboard.js"></script>
+    <script src="js/export/js/TableTools.js"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+    <script src="js/jquery.jscrollpane.min.js"></script>
+    <script src="js/jquery.stepy.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/raphael.2.1.0.min.js"></script>
+    <script src="js/justgage.1.0.1.min.js"></script>
+	<script src="js/glisse.js"></script>
+	<script src="js/styleswitcher.js"></script>
+    
+	<script src="js/application.js"></script>
+
+
+  </body>
+</html>
+
