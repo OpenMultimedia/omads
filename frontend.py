@@ -46,7 +46,15 @@ class Banners:
         mc.incr(banner_views_key)
         
         # build response
-        banner_html = '<img style="border:0;" src="/%s" />' % (banner.file)
+        banner_type = banner_get_type(banner)
+        if banner_type == 'image':
+            banner_html = '<img style="border:0;" src="/%s" />' % (banner.file)
+        elif banner_type == 'video':
+            banner_html = '<img style="border:0;" src="/%s.jpg" />' % (banner.file)
+        elif banner_type == 'flash':
+            banner_html = '<img style="border:0;" src="/%s" />' % (banner.file)
+        else:
+            banner_html = '<img style="border:0;" src="/%s" />' % (banner.file)
         
         if banner.link:
             banner_href = '/%s/%s/%s/click/' % (banner.medium, banner.zone, banner.id)
