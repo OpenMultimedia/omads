@@ -42,8 +42,13 @@ def del_banner(medium, id):
     import os
     try:
         banner = db.select('banner', where='medium=$medium AND id=$id', vars=locals())[0]
+        banner_type = banner_get_type(banner)
+        path = '%s/%s' % (PROJECT_DIR, banner.file)
         db.delete('banner', where='medium=$medium AND id=$id', vars=locals())
-        if banner.file and (os.path.exists(banner.file)): os.remove(banner.file)
+        if banner.file and (os.path.exists(path)):
+            os.remove(path)
+            if banner_type == 'video':
+                os.remove('%s.jpg' % path)
     except:
         pass
 
