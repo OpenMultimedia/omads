@@ -100,16 +100,31 @@ class New:
 
     def POST(self, medium):
         import uuid
+        from subprocess import call
+        
         form = self.form()
         x = web.input(file={})
         if not form.validates() or not 'file' in x:
             return get_render(medium).new(form)
-
-        filename='static/%s.jpg' % uuid.uuid4()
+        
+        uploadedFilename, uploadedExtension = os.path.splitext(x.file.filename)
+        uploadedExtension = uploadedExtension.lower()
+        
+        if uploadedExtension not in (VIDEO_FILE_EXTENSIONS + IMAGE_FILE_EXTENSIONS + FLASH_FILE_EXTENSIONS):
+            return get_render(medium).new(form)
+            
+        # move file to storage destination
+        filename='static/%s%s' % (uuid.uuid4(), uploadedExtension)
         path = '%s/%s' % (PROJECT_DIR, filename)
         fout = open(path, 'w')
         fout.write(x.file.file.read())
         fout.close()
+                
+        if uploadedExtension in VIDEO_FILE_EXNTENSIONS and uploadedExtension != '.flv':
+            call('ffmpeg -i %s -f flv - | flvtool2 -U stdin %s.flv' % (path, path), shell=True)
+            os.remove(path)
+            filename = '%s.flv' % filename 
+            path = '%s.flv' % path
         
         if form.d.zone == 'auto':
             zone = get_zone_for_file(open(path, 'r'))

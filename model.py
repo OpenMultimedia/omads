@@ -14,6 +14,18 @@ def get_banner(medium, id):
         return db.select('banner', where='medium=$medium AND id=$id', vars=locals())[0]
     except IndexError:
         return None
+
+def get_banner_type(banner):
+    import os
+    
+    name, ext = os.path.splitext(banner.file)
+    if ext in IMAGE_FILE_EXTENSIONS:
+        return 'image'
+    if ext in VIDEO_FILE_EXTENSIONS:
+        return 'video'
+    if ext in FLASH_FILE_EXTENSIONS:
+        return 'flash'
+     
         
 def get_delivery_banner(medium, zone, subzone=''):
     try:
