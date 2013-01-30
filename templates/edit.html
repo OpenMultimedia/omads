@@ -18,10 +18,10 @@ $:form.render()
 
 <script>
     function eliminar() {
-        if (confirm('¿Seguro que deseas eliminar este banner?'))
-        {
+        if (confirm('¿Seguro que deseas eliminar este banner?')) {
             jQuery('#deleteForm').submit();
         }
+        return false;
     }
 </script>
 
