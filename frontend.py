@@ -46,7 +46,7 @@ class Banners:
         mc.incr(banner_views_key)
         
         # build response
-        banner_type = banner_get_type(banner)
+        banner_type = model.banner_get_type(banner)
         if banner_type == 'image':
             banner_html = '<img style="border:0;" src="/%s" />' % (banner.file)
         elif banner_type == 'video':
