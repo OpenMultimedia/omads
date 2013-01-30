@@ -22,6 +22,37 @@ def get_render(medium):
         'zones': ZONES,
         'formatWithCommas': formatWithCommas, 
     })
+    
+VE_STATES = (
+    (-2, u'Cualquier ubicación'),
+    (-1, 'Extranjero'),
+    (0, 'Todo Venezuela'),
+    (1, 'Amazonas'),
+    (2, 'Anzoategui'),
+    (3, 'Apure'),
+    (4, 'Aragua'),
+    (5, 'Barinas'),
+    (6, 'Bolívar'),
+    (7, 'Carabobo'),
+    (8, 'Cojedes'),
+    (9, 'Delta Amacuro'),
+    (10, 'Dependencias Federales'),
+    (11, 'Distrito Capital'),
+    (12, 'Falcón'),
+    (13, 'Guárico'),
+    (14, 'Lara'),
+    (15, 'Mérida'),
+    (16, 'Miranda'),
+    (17, 'Monagas'),
+    (18, 'Nueva Esparta'),
+    (19, 'Portuguesa'),
+    (20, 'Sucre'),
+    (21, 'Táchira'),
+    (22, 'Trujillo'),
+    (23, 'Vargas'),
+    (24, 'Yaracuy'),
+    (25, 'Zulia'),
+)
 
 class Index:
 
@@ -57,8 +88,9 @@ class New:
         web.form.Dropdown('zone', args=[('auto', 'Determinar con base en el archivo'), ('', 'Sin Zona')] + [(z[0], '%s (%sx%s)' % (z[0], z[1], z[2])) for z in ZONES], description="Zona:"),
         web.form.Dropdown('subzone', args=([('', '---')] + [str(x) for x in range(1, 20)]), description="Sub-zona:", post='(opcional)'),
         web.form.Textbox('link', size=50, description="Link:", post='(opcional)'),
-        web.form.Dropdown('link_mode', args=((0, u'Abrir en la misma página'), (1, 'Abrir en nueva página o pestaña')), description="Modo de link:"),
+        web.form.Dropdown('link_mode', args=((0, u'Abrir en la misma página'), (1, 'Abrir en nueva página o pestaña'), (2, 'Abrir en ventana emergente (pop-up)')), description="Modo de link:"),
         web.form.Dropdown('weight', args=range(0, 100, 10), description="Peso:", value=50, post='(aumenta o disminuye la probabilidad de mostrar el banner)'),
+        web.form.Dropdown('states', disabled='disabled', args=VE_STATES, multiple='multiple', value=-2, size=8, description="Geo-despliegue:", post='Muestra banner en la(s) region(es) seleccionada(s).<br />Mantener preisonado crtl ó shift para seleccionar más de una ubicación'),
         web.form.Button('Guardar'),
     )
 

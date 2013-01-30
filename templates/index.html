@@ -74,6 +74,10 @@ $def with (banners, zone)
 $if not banners:
     <h2>Ningún banner a mostrar</h2>
     
+$code:
+    def rating(banner):
+        return banner.views / banner.clicks
+
 $ last_zone = None
 $for banner in banners:
     $if last_zone != banner.zone:
@@ -101,8 +105,10 @@ $for banner in banners:
                 <span>
                 $if banner.link_mode == 0:
                     abre en la misma página
-                $else:
-                    abre en nueva página o pestaña
+                $elif banner.link_mode == 1:
+                    abre nueva ventana/pestaña
+                $elif banner.link_mode == 2:
+                    abre ventana emergente (pop-up)
                 </span>
         </td>
         <td class="created_at">$banner.created_at</td>

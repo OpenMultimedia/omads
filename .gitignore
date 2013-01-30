@@ -1,3 +1,4 @@
 *.py[cod]
 static/*
+*.htpasswd
 db

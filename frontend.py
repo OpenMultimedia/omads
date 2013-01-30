@@ -7,6 +7,7 @@ from settings import *
 import web
 import model
 import memcache
+import re
 
 
 urls = (
@@ -14,6 +15,8 @@ urls = (
     '/(.+)/(.+)/(.+)/', 'Banners',
     '/(.+)/(.+)/', 'Banners',
 )
+
+#POPUP_RE = re.compile(r'(.+),\s*(\d+)\s*,\s*(\d+)')
 
 class Banners:
     def GET(self, medium, zone, subzone=''):
@@ -44,10 +47,17 @@ class Banners:
         
         # build response
         banner_html = '<img style="border:0;" src="/%s" />' % (banner.file)
-        target = '_top' if banner.link_mode == 0 else '_blank'
-        if banner.link: banner_html = '<a href="/%s/%s/%s/click/" target="%s">%s</a>' % (banner.medium, banner.zone, banner.id, target, banner_html)
-        web.header("Content-Type","text/html; charset=utf-8")
         
+        if banner.link:
+            banner_href = '/%s/%s/%s/click/' % (banner.medium, banner.zone, banner.id)
+            if banner.link_mode == 2:
+                banner_href = "javascript:window.open('%s','','width=800,height=600,location=no,menubar=no,status=no,toolbar=no');return false;" % banner_href
+                banner_html = '<a href="#" onclick="%s">%s</a>' % (banner_href, banner_html)
+            else:
+                target = '_top' if banner.link_mode == 0 else '_blank'
+                banner_html = '<a href="%s" target="%s">%s</a>' % (banner_href, target, banner_html)
+        
+        web.header("Content-Type","text/html; charset=utf-8")        
         return '<html><body class="banner-%s" style="margin:0;">%s</body></html>' % (banner.id, banner_html)
       
 class Click:
