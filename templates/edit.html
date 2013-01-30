@@ -6,7 +6,9 @@ $def with (medium, banner, form)
     }
 </style>
 
-<h2>Editar banner</h2>
+$var title: Modificar banner
+$var menu: <li><a href="/$:medium" class="act_link">Cancelar</a></li><li><a href="#" onclick="return eliminar();">Eliminar este banner</a></li> 
+
 
 <form action="" method="post" enctype="multipart/form-data">
 $:form.render()
@@ -14,8 +16,13 @@ $:form.render()
 
 <img src="/$banner.file" />
 
+<script>
+    function eliminar() {
+        if (confirm('¿Seguro que deseas eliminar este banner?'))
+        {
+            jQuery('#deleteForm').submit();
+        }
+    }
+</script>
 
-<h2>Eliminar banner</h2>
-<form action="/$medium/delete/$banner.id" method="post">
-    <input type="submit" value="Eliminar banner"/>
-</form>
+<form action="/$medium/delete/$banner.id" method="post" id="deleteForm"></form>

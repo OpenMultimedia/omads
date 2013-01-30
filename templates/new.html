@@ -1,12 +1,14 @@
 $def with (form)
 
-<style type="text/css">
-    td, th {
-        padding: 0.4em;
-    }
-</style>
+$var title: Añadir nuevo banner
+$var menu: <li><a href="/$:medium">Cancelar</a></li> 
 
-<h2>Agregar nuevo banner</h2>
+<script>
+jQuery(document).ready(function() {
+    jQuery('.main_menu_new').addClass('active');
+});
+</script>
+
 <form action="" method="post" enctype="multipart/form-data">
 $:form.render()
 </form>

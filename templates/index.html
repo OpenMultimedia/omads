@@ -1,89 +1,65 @@
 $def with (banners, zone)
 
-<h2>Lista de banners</h2>
+$var title: Lista de banners
+
 
 <style type="text/css">
-    td, th {
-        border: 1px solid gray;
-        margin: 0;
-        padding: 3px;
-        text-align: center;
-    }
-    th {
-        background: lightgray;
-    }
-    
     td.file img {
-        max-width: 180px;
-        max-height: 120px;
-    }
-    
-    td.link {
-        max-width:200px;
-        word-wrap:break-word;
-        font-size: 90%;
-    }
-    
-    td.link span {
-        font-size: 80%;
-        color: #333333;
-    }
-    
-    th.zone {
-        font-size: 150%;
-    }
-    
-    th.zone {
-        font-size: 125%;
-    }
-    
-    td.created_at {
-        width: 80px;
-    }
-    
-    ul.zone_filter li {
-        list-style: none;
-        display: inline;
-        margin-right: 1.2em;
-    }
-    ul.zone_filter a {white-space: nowrap;}
-    
-    table a {
-        display: block;
-    }
+          max-width: 150px;
+          max-height: 100px;
+      }
+     
+     td.link span {
+         display: block;
+     }
+     
+     td.link {
+         max-width: 300px;
+     }
+  /*   td.file {
+           width: 100px;
+           height: 100px;
+       }*/
 </style>
 
-<ul class="zone_filter">
+$def menu_items():
     <li class="todo">
         $if zone != '':
             <a href="/$:medium">TODO</a>
         $else:
-            TODO
+            <a class="act_link" href="/$:medium">TODO</a>
     </li>
     $for z in zones:
         <li class="$z[0]">
             $if zone != z[0]:
                 <a href="/$:medium?zone=$z[0]">Zona $z[0] ($z[1]x$z[2])</a>
             $else:
-                Zona $z[0] ($z[1]x$z[2])
+                <a class="act_link" href="/$:medium?zone=$z[0]">Zona $z[0] ($z[1]x$z[2])</a>
         </li>
-</ul>
+$var menu: $:menu_items()
 
-<table cellspacing="0">
-    
+
 $if not banners:
     <h2>Ningún banner a mostrar</h2>
-    
+
+
 $code:
     def rating(banner):
         return banner.views / banner.clicks
 
+<script>
+jQuery(document).ready(function() {
+    jQuery('.main_menu_index').addClass('active');
+});
+</script>
+
+<table class="table table-striped table-bordered table-condensed table-mod">
+
 $ last_zone = None
 $for banner in banners:
     $if last_zone != banner.zone:
-        <tr>
+        <thead><tr>
             <th>Zona</th>
-            <th>Subzona</th>
             <th>Peso</th>
             <th>Banner</th>
             <th>Link</th>
@@ -91,12 +67,15 @@ $for banner in banners:
             <th>Impresiones</th>
             <th>Clicks</th>
             <th>Acciones</th>
-        </tr>
+        </tr></thead><tbody>
     $ last_zone = banner.zone
-    
     <tr class="$banner.zone">
-        <th class="zone"><a href="http://ad.openmultimedia.biz/$:medium/$banner.zone/">$banner.zone</a></big></strong></th>
-        <th class="subzone"><a href="http://ad.openmultimedia.biz/$:medium/$banner.zone/$banner.subzone/">$banner.subzone</a></big></strong></th>
+        <td class="zone">
+            $if banner.zone:
+                <a href="http://ad.openmultimedia.biz/$:medium/$banner.zone/">$banner.zone</a></big></strong>
+                $if banner.subzone:
+                    / <a href="http://ad.openmultimedia.biz/$:medium/$banner.zone/$banner.subzone/">$banner.subzone</a></big></strong>
+        </td>
         <td class="weight">$banner.weight</td>
         <td class="file">
             $if banner_get_type(banner) == 'image':
@@ -124,4 +103,5 @@ $for banner in banners:
         <td class="actions"><a href="/$:medium/edit/$banner.id">Editar</a>
     </tr>
 
-</table>
+</tbody></table>
+</div>

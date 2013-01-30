@@ -85,7 +85,7 @@ class New:
 
     form = web.form.Form(
         #web.form.Dropdown('medium', args=('telesur', 'vtv'), description="Medio:"),
-        web.form.File('file', description="Archivo:", post='(formato JPG)'),
+        web.form.File('file', description="Archivo:", post='formatos soportados: .jpg, .flv, .mp4, .mpg, .avi, .swf'),
         web.form.Dropdown('zone', args=[('auto', 'Determinar con base en el archivo'), ('', 'Sin Zona')] + [(z[0], '%s (%sx%s)' % (z[0], z[1], z[2])) for z in ZONES], description="Zona:"),
         web.form.Dropdown('subzone', args=([('', '---')] + [str(x) for x in range(1, 20)]), description="Sub-zona:", post='(opcional)'),
         web.form.Textbox('link', size=50, description="Link:", post='(opcional)'),
