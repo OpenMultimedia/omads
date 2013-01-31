@@ -35,6 +35,11 @@ $var title: Lista de banners
       .menu-speedbar li.todo {
             line-height: 20px;
         }
+        
+        span.video_label {
+            font-size: 0.8em;
+            display: block; text-align: center;
+        }
 </style>
 
 $def menu_items():
@@ -96,6 +101,7 @@ $for banner in banners:
             $if banner_get_type(banner) == 'image':
                 <a href="$banner.file"><img src="/$banner.file"></a>
             $if banner_get_type(banner) == 'video':
+                <span class="video_label">VIDEO</span>
                 <a href="$banner.file"><img src="/${banner.file}.jpg"></a>
             $if banner_get_type(banner) == 'flash':
                 <a href="$banner.file"><img src="/$banner.file"></a>
