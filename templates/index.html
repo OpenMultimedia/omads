@@ -118,8 +118,6 @@ $for banner in banners:
         $if last_zone != None:
             <tr class="totals">
                 <th class="totals" colspan="8">Vistas en la subzona: $:formatWithCommas('%i', zone_views_count). Click en la subzona: $:formatWithCommas('%i', zone_clicks_count)</th>
-                $ total_views_count += zone_views_count
-                $ total_clicks_count += zone_clicks_count
                 $ zone_views_count = 0
                 $ zone_clicks_count = 0
             </tr>
@@ -135,7 +133,9 @@ $for banner in banners:
         </tr></thead><tbody>
     $ last_zone = banner.zone + banner.subzone
     $ zone_views_count += banner.views
+    $ total_views_count += banner.views
     $ zone_clicks_count += banner.clicks
+    $ total_clicks_count += banner.clicks
     <tr class="$banner.zone">
         <td class="zone">
             $if banner.zone and banner.subzone:
