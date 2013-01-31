@@ -21,6 +21,20 @@ $var title: Lista de banners
          padding: 1px;
          text-align: center;
       }
+      
+      span.dims {
+          font-size: 0.85em;
+          display: block;
+      }
+      
+      .menu-speedbar li {
+          line-height: 12px;
+          text-align: center;
+      }
+      
+      .menu-speedbar li.todo {
+            line-height: 20px;
+        }
 </style>
 
 $def menu_items():
@@ -33,9 +47,9 @@ $def menu_items():
     $for z in zones:
         <li class="$z[0]">
             $if zone != z[0]:
-                <a href="/$:medium?zone=$z[0]">Zona $z[0] ($z[1]x$z[2])</a>
+                <a href="/$:medium?zone=$z[0]">Zona $z[0] <span class="dims">$z[1]x$z[2]</span></a>
             $else:
-                <a class="act_link" href="/$:medium?zone=$z[0]">Zona $z[0] ($z[1]x$z[2])</a>
+                <a class="act_link" href="/$:medium?zone=$z[0]">Zona $z[0] <span class="dims">$z[1]x$z[2]</span></a>
         </li>
 $var menu: $:menu_items()
 
@@ -58,7 +72,7 @@ jQuery(document).ready(function() {
 
 $ last_zone = None
 $for banner in banners:
-    $if last_zone != banner.zone:
+    $if last_zone != banner.zone + banner.subzone:
         <thead><tr>
             <th>Zona</th>
             <th>Peso</th>
@@ -69,7 +83,7 @@ $for banner in banners:
             <th>Clicks</th>
             <th>Acciones</th>
         </tr></thead><tbody>
-    $ last_zone = banner.zone
+    $ last_zone = banner.zone + banner.subzone
     <tr class="$banner.zone">
         <td class="zone">
             $if banner.zone:
