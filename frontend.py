@@ -47,14 +47,15 @@ class Banners:
         
         # build response
         banner_type = model.banner_get_type(banner)
+        banner_zone = model.banner_get_zone_tuple(banner)
         if banner_type == 'image':
-            banner_html = '<img style="border:0;" src="/%s" />' % (banner.file)
+            banner_html = '<img style="border:0;width:%s;height:%s;" src="/%s" />' % (banner_zone[1], banner_zone[2], banner.file)
         elif banner_type == 'video':
-            banner_html = '<img style="border:0;" src="/%s.jpg" />' % (banner.file)
+            banner_html = '<img style="border:0;width:%s;height:%s;" src="/%s.jpg" />' % (banner_zone[1], banner_zone[2], banner.file)
         elif banner_type == 'flash':
-            banner_html = '<img style="border:0;" src="/%s" />' % (banner.file)
+            banner_html = '<img style="border:0;width:%s;height:%s;" src="/%s" />' % (banner_zone[1], banner_zone[2], banner.file)
         else:
-            banner_html = '<img style="border:0;" src="/%s" />' % (banner.file)
+            banner_html = '<img style="border:0;width:%s;height:%s;" src="/%s" />' % (banner_zone[1], banner_zone[2], banner.file)
         
         if banner.link:
             banner_href = '/%s/%s/%s/click/' % (banner.medium, banner.zone, banner.id)

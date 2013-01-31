@@ -25,6 +25,11 @@ def banner_get_type(banner):
         return 'video'
     if ext in FLASH_FILE_EXTENSIONS:
         return 'flash'
+        
+def banner_get_zone_tuple(banner):
+    for zone in ZONES:
+        if zone[0] == banner.zone:
+            return zone
      
         
 def get_delivery_banner(medium, zone, subzone=''):
