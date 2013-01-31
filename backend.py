@@ -7,6 +7,7 @@ from settings import *
 import web
 import model
 from utils import *
+from datetime import datetime
 
 urls = (
     '/(%s)' % MEDIA_RE, 'Index',
@@ -22,6 +23,7 @@ def get_render(medium):
         'zones': ZONES,
         'formatWithCommas': formatWithCommas,
         'banner_get_type': model.banner_get_type, 
+        'strftime': datetime.strftime,
     })
     
 VE_STATES = (

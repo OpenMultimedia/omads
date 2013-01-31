@@ -14,12 +14,13 @@ $var title: Lista de banners
      }
      
      td.link {
-         max-width: 300px;
+         max-width: 250px;
+         font-size: 0.75em;
      }
-  /*   td.file {
-           width: 100px;
-           height: 100px;
-       }*/
+     td.file {
+         padding: 1px;
+         text-align: center;
+      }
 </style>
 
 $def menu_items():
@@ -97,7 +98,7 @@ $for banner in banners:
                     abre ventana emergente (pop-up)
                 </span>
         </td>
-        <td class="created_at">$banner.created_at</td>
+        <td class="created_at">$:strftime(banner.created_at, '%d-%m-%Y<br />%H:%M:%S')</td>
         <td class="views">$:formatWithCommas('%i', banner.views)</td>
         <td class="clicks">$:formatWithCommas('%i', banner.clicks)</td>
         <td class="actions"><a href="/$:medium/edit/$banner.id">Editar</a>
