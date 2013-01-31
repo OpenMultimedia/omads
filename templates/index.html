@@ -4,9 +4,14 @@ $var title: Lista de banners
 
 
 <style type="text/css">
+
+    thead th {
+        padding: 2em 1px;
+    }
+
     td.file img {
-          max-width: 150px;
-          max-height: 100px;
+          max-width: 120px;
+          max-height: 80px;
       }
      
      td.link span {
@@ -14,12 +19,25 @@ $var title: Lista de banners
      }
      
      td.link {
-         max-width: 250px;
-         font-size: 0.75em;
+         max-width: 230px;
+         font-size: 0.70em;
+         line-height: 15px;
      }
      td.file {
          padding: 1px;
          text-align: center;
+      }
+      
+      td.zone {
+          text-align: center;
+          vertical-align: middle;
+          font-weight: bold;
+          font-size: 1.5em;
+      }
+      
+      td.weight {
+          text-align: center;
+          vertical-align: middle;
       }
       
       .menu-speedbar span.dims {
@@ -85,17 +103,19 @@ $for banner in banners:
             <th>Banner</th>
             <th>Link</th>
             <th>Colocación</th>
-            <th>Impresiones</th>
+            <th>Impr.</th>
             <th>Clicks</th>
             <th>Acciones</th>
         </tr></thead><tbody>
     $ last_zone = banner.zone + banner.subzone
     <tr class="$banner.zone">
         <td class="zone">
-            $if banner.zone:
-                <a href="http://ad.openmultimedia.biz/$:medium/$banner.zone/">$banner.zone</a></big></strong>
-                $if banner.subzone:
-                    / <a href="http://ad.openmultimedia.biz/$:medium/$banner.zone/$banner.subzone/">$banner.subzone</a></big></strong>
+            $if banner.zone and banner.subzone:
+                <a href="http://ad.openmultimedia.biz/$:medium/$banner.zone/$banner.subzone/">$banner.zone$banner.subzone</a>
+            $elif banner.zone:
+                 <a href="http://ad.openmultimedia.biz/$:medium/$banner.zone/">$banner.zone</a>
+            $else:
+                 -
         </td>
         <td class="weight">$banner.weight</td>
         <td class="file">
