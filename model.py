@@ -6,7 +6,8 @@ db = web.database(dbn='mysql', host=DB['host'], db=DB['name'], user=DB['user'], 
 
 def get_banners(medium, zone='', subzone=''):
     and_where = ' AND zone=$zone' if zone else ''
-    if subzone: and_where+= ' AND subzone=$subzone'
+    #if subzone: and_where+= ' AND subzone=$subzone'
+    and_where+= ' AND subzone=$subzone'
     return db.select('banner', where='medium=$medium'+and_where, order='medium, zone, subzone, id DESC', vars=locals())
 
 def get_banner(medium, id):
