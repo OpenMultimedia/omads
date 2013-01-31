@@ -61,8 +61,9 @@ class Index:
 
     def GET(self, medium):
         """ View banner list """
-        zone = web.input().zone if 'zone' in web.input() else ''
-        banners = model.get_banners(medium, zone)
+        zone = web.input().zone if 'zone' in web.input() else None
+        subzone = web.input().subzone if 'subzone' in web.input() else None
+        banners = model.get_banners(medium, zone, subzone)
         return get_render(medium).index(banners, zone)
 
 
