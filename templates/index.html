@@ -10,6 +10,10 @@ $var title: Lista de banners
         text-align: center;
         font-size: 0.85em;
     }
+    
+    th.totals {
+        text-align: right;
+    }
 
     td.file img {
           max-width: 100px;
@@ -104,8 +108,21 @@ jQuery(document).ready(function() {
 <table class="table table-striped table-bordered table-condensed table-mod">
 
 $ last_zone = None
+$ zone_views_count = 0
+$ zone_clicks_count = 0
+$ total_views_count = 0
+$ total_clicks_count = 0
+
 $for banner in banners:
     $if last_zone != banner.zone + banner.subzone:
+        $if last_zone != None:
+            <tr class="totals">
+                <th class="totals" colspan="8">Vistas en la subzona: $:formatWithCommas('%i', zone_views_count). Click en la subzona: $:formatWithCommas('%i', zone_clicks_count)</th>
+                $ total_views_count += zone_views_count
+                $ total_clicks_count += zone_clicks_count
+                $ zone_views_count = 0
+                $ zone_clicks_count = 0
+            </tr>
         <thead><tr>
             <th>Zona</th>
             <th>Peso</th>
@@ -117,6 +134,8 @@ $for banner in banners:
             <th>Acciones</th>
         </tr></thead><tbody>
     $ last_zone = banner.zone + banner.subzone
+    $ zone_views_count += banner.views
+    $ zone_clicks_count += banner.clicks
     <tr class="$banner.zone">
         <td class="zone">
             $if banner.zone and banner.subzone:
@@ -153,6 +172,20 @@ $for banner in banners:
         <td class="clicks">$:formatWithCommas('%i', banner.clicks)</td>
         <td class="actions"><a href="/$:medium/edit/$banner.id">Editar</a>
     </tr>
+<tr>
+    <th class="totals" colspan="8">Vistas en la subzona: $:formatWithCommas('%i', zone_views_count). Click en la subzona: $:formatWithCommas('%i', zone_clicks_count)</th>
+</tr><tr>
+    <th colspan="8">Vistas totales: $:formatWithCommas('%i', total_views_count). Clicks totales: $:formatWithCommas('%i', total_clicks_count)</th>
+</tr>
+    
+<script>
+jQuery(document).ready(function()
+   jQuery('td.weight').each(function(i, el) {
+       var percent = 0.01 * parseInt(jQuery(el).text());
+       jQuery(el).css({opacity: percent);
+   });
+);
+</script>
 
 </tbody></table>
 </div>
