@@ -5,7 +5,7 @@ PROJECT_DIR = os.path.dirname(__file__)
 
 # TODO: integrate media to application logic, for instance in a db table
 # media sites or client separation
-MEDIA_RE = 'telesur|vtv|cienciasalud'
+MEDIA_RE = 'telesur|vtv|cienciasalud|rsur|rnv'
 
 # MySQL database connection
 DB = {
