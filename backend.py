@@ -74,10 +74,10 @@ class View:
         banner = model.get_banner(medium, int(id))
         return get_render(medium).view(banner)
 
-def get_zone_for_file(file_image):
+def get_zone_for_file(image_file):
     from PIL import Image
     try:
-        s = Image.open(file_image).size
+        s = Image.open(image_file).size
         for z in ZONES:
             if s[0] == z[1] and s[1] == z[2]: return z[0]
         return ''

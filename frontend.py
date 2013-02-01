@@ -7,16 +7,19 @@ from settings import *
 import web
 import model
 import memcache
-import re
 
 
 urls = (
+    # /medium/zone/id/
     '/(.+)/(.+)/(\d+)/click/', 'Click',
+    
+    # /medium/zone/subzone/
     '/(.+)/(.+)/(.+)/', 'Banners',
+    
+    # /medium/zone/
     '/(.+)/(.+)/', 'Banners',
 )
 
-#POPUP_RE = re.compile(r'(.+),\s*(\d+)\s*,\s*(\d+)')
 
 class Banners:
     def GET(self, medium, zone, subzone=''):
@@ -33,7 +36,9 @@ class Banners:
             mc.set(banner_key, banner, BANNER_CACHE_SECONDS)
         
         # banner not found
-        if not banner: return web.notfound()
+        if not banner:
+            web.header("Content-Type","text/html; charset=utf-8")
+            return '<html><body class="banner" style="margin:0;"></body></html>'
         
         # if necessary store views count in database 
         if not mc.get(banner_counting_key):
