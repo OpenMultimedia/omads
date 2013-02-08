@@ -51,6 +51,17 @@ class Banners:
         mc.incr(banner_views_key)
         
         # build response
+        target = ''
+        if banner.link:
+            banner_href = '/%s/%s/%s/click/' % (banner.medium, banner.zone, banner.id)
+            if banner.link_mode == 2:
+                banner_href = "javascript:window.open('%s','','width=800,height=600,location=no,menubar=no,status=no,toolbar=no');return false;" % banner_href
+                banner_html = '<a href="#" onclick="%s">%s</a>' % (banner_href, banner_html)
+                tarhet = '_popup'
+            else:
+                target = '_top' if banner.link_mode == 0 else '_blank'
+                banner_html = '<a href="%s" target="%s">%s</a>' % (banner_href, target, banner_html)
+        
         banner_type = model.banner_get_type(banner)
         banner_zone = model.banner_get_zone_tuple(banner)
         if banner_type == 'image':
@@ -61,26 +72,18 @@ class Banners:
             banner_html = '''
             <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="%s" height="%s" id="OMAdPlayer" align="middle">
             <param name="allowScriptAccess" value="*" /> <param name="allowFullScreen" value="true" />
-            <param name="movie" value="http://widgets.openmultimedia.biz/ads/component.swf?video=%s&poster=%s" />
+            <param name="movie" value="http://widgets.openmultimedia.biz/ads/component.swf?video=%s&poster=%s&clickTARGET=%s&clickTAG=%s" />
             <param name"quality" value="high" /><param name="bgcolor" value="#0000" />
-            <embed src="http://widgets.openmultimedia.biz/ads/component.swf?video=%s&poster=%s"
+            <embed src="http://widgets.openmultimedia.biz/ads/component.swf?video=%s&poster=%s&clickTARGET=%s&clickTAG=%s"
                    quality="high" bgcolor="#000000" width="%s" height="%s" name="VideoPlayer" align="middle" allowScriptAccess="*" allowFullScreen="true"
                    type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /> </object>
-            ''' % (banner_zone[1], banner_zone[2], banner_url, poster_url, banner_url, poster_url, banner_zone[1], banner_zone[2])
+            ''' % (banner_zone[1], banner_zone[2], banner_url, poster_url, target, banner.link, banner_url, poster_url, target, banner.link, banner_zone[1], banner_zone[2])
             #banner_html = '<img style="border:0;width:%s;height:%s;" src="/%s.jpg" />' % (banner_zone[1], banner_zone[2], banner.file)
         elif banner_type == 'flash':
             banner_html = '<img style="border:0;width:%s;height:%s;" src="/%s" />' % (banner_zone[1], banner_zone[2], banner.file)
         else:
             banner_html = '<img style="border:0;width:%s;height:%s;" src="/%s" />' % (banner_zone[1], banner_zone[2], banner.file)
         
-        if banner.link:
-            banner_href = '/%s/%s/%s/click/' % (banner.medium, banner.zone, banner.id)
-            if banner.link_mode == 2:
-                banner_href = "javascript:window.open('%s','','width=800,height=600,location=no,menubar=no,status=no,toolbar=no');return false;" % banner_href
-                banner_html = '<a href="#" onclick="%s">%s</a>' % (banner_href, banner_html)
-            else:
-                target = '_top' if banner.link_mode == 0 else '_blank'
-                banner_html = '<a href="%s" target="%s">%s</a>' % (banner_href, target, banner_html)
         
         web.header("Content-Type","text/html; charset=utf-8")        
         return '<html><body class="banner-%s" style="margin:0;">%s</body></html>' % (banner.id, banner_html)
