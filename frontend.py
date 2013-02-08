@@ -53,14 +53,10 @@ class Banners:
         # build response
         target = ''
         if banner.link:
-            banner_href = '/%s/%s/%s/click/' % (banner.medium, banner.zone, banner.id)
             if banner.link_mode == 2:
-                banner_href = "javascript:window.open('%s','','width=800,height=600,location=no,menubar=no,status=no,toolbar=no');return false;" % banner_href
-                banner_html = '<a href="#" onclick="%s">%s</a>' % (banner_href, banner_html)
-                tarhet = '_popup'
+                target = '_popup'
             else:
-                target = '_top' if banner.link_mode == 0 else '_blank'
-                banner_html = '<a href="%s" target="%s">%s</a>' % (banner_href, target, banner_html)
+                target = '_top' if banner.link_mode == 0 else '_blank'        
         
         banner_type = model.banner_get_type(banner)
         banner_zone = model.banner_get_zone_tuple(banner)
@@ -84,6 +80,13 @@ class Banners:
         else:
             banner_html = '<img style="border:0;width:%s;height:%s;" src="/%s" />' % (banner_zone[1], banner_zone[2], banner.file)
         
+        if banner.link:
+            banner_href = '/%s/%s/%s/click/' % (banner.medium, banner.zone, banner.id)
+            if target == '_popup':
+                banner_href = "javascript:window.open('%s','','width=800,height=600,location=no,menubar=no,status=no,toolbar=no');return false;" % banner_href
+                banner_html = '<a href="#" onclick="%s">%s</a>' % (banner_href, banner_html)
+            else:
+                banner_html = '<a href="%s" target="%s">%s</a>' % (banner_href, target, banner_html)
         
         web.header("Content-Type","text/html; charset=utf-8")        
         return '<html><body class="banner-%s" style="margin:0;">%s</body></html>' % (banner.id, banner_html)
