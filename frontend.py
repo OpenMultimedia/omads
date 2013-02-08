@@ -57,15 +57,16 @@ class Banners:
             banner_html = '<img style="border:0;width:%s;height:%s;" src="/%s" />' % (banner_zone[1], banner_zone[2], banner.file)
         elif banner_type == 'video':
             banner_url = 'http://ad.openmultimedia.biz/%s' % banner.file
+            poster_url = 'http://ad.openmultimedia.biz/%s.jpg' % banner.file
             banner_html = '''
             <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="%s" height="%s" id="OMAdPlayer" align="middle">
             <param name="allowScriptAccess" value="*" /> <param name="allowFullScreen" value="true" />
-            <param name="movie" value="http://www.platipus.nl/flvplayer/download/1.0/FLVPlayer.swf?video=%s" />
+            <param name="movie" value="http://widgets.openmultimedia.biz/ads/component.swf?video=%s&poster=%s" />
             <param name"quality" value="high" /><param name="bgcolor" value="#0000" />
-            <embed src="http://www.platipus.nl/flvplayer/download/1.0/FLVPlayer.swf?video=%s"
+            <embed src="http://widgets.openmultimedia.biz/ads/component.swf?video=%s&poster=%s"
                    quality="high" bgcolor="#000000" width="%s" height="%s" name="VideoPlayer" align="middle" allowScriptAccess="*" allowFullScreen="true"
                    type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /> </object>
-            ''' % (banner_zone[1], banner_zone[2], banner_url, banner_url, banner_zone[1], banner_zone[2])
+            ''' % (banner_zone[1], banner_zone[2], banner_url, poster_url, banner_url, poster_url, banner_zone[1], banner_zone[2])
             #banner_html = '<img style="border:0;width:%s;height:%s;" src="/%s.jpg" />' % (banner_zone[1], banner_zone[2], banner.file)
         elif banner_type == 'flash':
             banner_html = '<img style="border:0;width:%s;height:%s;" src="/%s" />' % (banner_zone[1], banner_zone[2], banner.file)
