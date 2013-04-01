@@ -76,6 +76,25 @@ class Banners:
             ''' % (banner_zone[1], banner_zone[2], banner_url, poster_url, target, banner.link, banner_url, poster_url, target, banner.link, banner_zone[1], banner_zone[2])
             #banner_html = '<img style="border:0;width:%s;height:%s;" src="/%s.jpg" />' % (banner_zone[1], banner_zone[2], banner.file)
         elif banner_type == 'flash':
+            insert_flash = '''
+            <!--[if !IE]> -->
+            <object type="application/x-shockwave-flash"
+              data="movie.swf" width="300" height="135">
+            <!-- <![endif]-->
+
+            <!--[if IE]>
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+              codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+              width="300" height="135">
+              <param name="movie" value="movie.swf" />
+            <!--><!--dgx-->
+              <param name="loop" value="true" />
+              <param name="menu" value="false" />
+
+              <p>This is <b>alternative</b> content.</p>
+            </object>
+            <!-- <![endif]-->
+            '''
             banner_html = '<img style="border:0;width:%s;height:%s;" src="/%s" />' % (banner_zone[1], banner_zone[2], banner.file)
         else:
             banner_html = '<img style="border:0;width:%s;height:%s;" src="/%s" />' % (banner_zone[1], banner_zone[2], banner.file)
