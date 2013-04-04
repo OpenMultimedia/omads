@@ -24,6 +24,7 @@ ZONES = (
     ('E', 234, 60),
     ('F', 300, 50),
     ('G', 220, 70),
+    ('H', 800, 600),
 )
 
 IMAGE_FILE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif']
