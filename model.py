@@ -37,7 +37,7 @@ def get_delivery_banner(medium, zone, subzone=''):
     try:
         and_where = ' AND subzone=$subzone' if subzone else ''
         #return db.select('banner', where='medium=$medium AND zone=$zone'+and_where, order='RAND ()', limit=1, vars=locals())[0]
-        return db.query('SELECT *, (RAND() * weight) AS SCORE FROM banner WHERE medium=$medium AND zone=$zone '+ and_where +' ORDER BY SCORE DESC LIMIT 1', vars=locals())[0];
+        return db.query('SELECT *, (RAND() * weight) AS SCORE FROM banner WHERE weight>0 AND medium=$medium AND zone=$zone '+ and_where +' ORDER BY SCORE DESC LIMIT 1', vars=locals())[0];
     except IndexError:
         return None
 
