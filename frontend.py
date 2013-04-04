@@ -10,9 +10,9 @@ import memcache
 
 
 urls = (
-    # /medium/zone/id/
+    # /medium/zone/id/click/
     '/(.+)/(.+)/(\d+)/click/', 'Click',
-    
+
     # /medium/zone/subzone/
     '/(.+)/(.+)/(.+)/', 'Banners',
     
@@ -37,8 +37,13 @@ class Banners:
         
         # banner not found
         if not banner:
-            web.header("Content-Type","text/html; charset=utf-8")
-            return '<html><body class="banner" style="margin:0;"></body></html>'
+            if 'interstitial' in web.input() and web.input().interstitial:
+                web.header("Content-Type","application/javascript; charset=utf-8")
+                return ''
+            else:
+                # normal (iframe)
+                web.header("Content-Type","text/html; charset=utf-8")
+                return '<html><body class="banner" style="margin:0;"></body></html>'
         
         # if necessary store views count in database 
         if not mc.get(banner_counting_key):
@@ -76,26 +81,25 @@ class Banners:
             ''' % (banner_zone[1], banner_zone[2], banner_url, poster_url, target, banner.link, banner_url, poster_url, target, banner.link, banner_zone[1], banner_zone[2])
             #banner_html = '<img style="border:0;width:%s;height:%s;" src="/%s.jpg" />' % (banner_zone[1], banner_zone[2], banner.file)
         elif banner_type == 'flash':
-            insert_flash = '''
+            flash_html = '''
             <!--[if !IE]> -->
             <object type="application/x-shockwave-flash"
-              data="movie.swf" width="300" height="135">
+              data="/%s" width="%i" height="%i">
             <!-- <![endif]-->
 
             <!--[if IE]>
             <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
               codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
-              width="300" height="135">
-              <param name="movie" value="movie.swf" />
+              width="%i" height="%i">
+              <param name="movie" value="/%s" />
             <!--><!--dgx-->
               <param name="loop" value="true" />
               <param name="menu" value="false" />
-
-              <p>This is <b>alternative</b> content.</p>
+              %s
             </object>
             <!-- <![endif]-->
             '''
-            banner_html = '<img style="border:0;width:%s;height:%s;" src="/%s" />' % (banner_zone[1], banner_zone[2], banner.file)
+            banner_html = flash_html % (banner.file, banner_zone[1], banner_zone[2], banner_zone[1], banner_zone[2], banner.file, 'No flash')
         else:
             banner_html = '<img style="border:0;width:%s;height:%s;" src="/%s" />' % (banner_zone[1], banner_zone[2], banner.file)
         
@@ -107,8 +111,16 @@ class Banners:
             else:
                 banner_html = '<a href="%s" target="%s">%s</a>' % (banner_href, target, banner_html)
         
-        web.header("Content-Type","text/html; charset=utf-8")        
-        return '<html><body class="banner-%s" style="margin:0;">%s</body></html>' % (banner.id, banner_html)
+        
+
+        if 'interstitial' in web.input() and web.input().interstitial:
+            web.header("Content-Type","application/javascript; charset=utf-8")
+            render = web.template.frender(PROJECT_DIR + '/templates/interstitial.min.js')(banner, banner_html, banner_zone)
+            return render
+        else:
+            # normal (iframe)
+            web.header("Content-Type","text/html; charset=utf-8")
+            return '<html><body class="banner-%s" style="margin:0;">%s</body></html>' % (banner.id, banner_html)
       
 class Click:
     def GET(self, medium, zone, id):
