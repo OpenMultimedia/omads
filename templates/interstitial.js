@@ -50,12 +50,13 @@ OMAds.insert_banner = function(options) {
 	    display: 'none'
      });
 
+    var now = ( new Date().getTime() / 1000.0 );
+    var shown = $$.cookie('OMAds_shown'),
+        expires = 1800;
 
-    var shown = $$.cookie('OMAds_shown');
+    if (typeof shown == 'undefined' || !shown || ((Number(shown)+expires) < now)) {
 
-    if (typeof shown == 'undefined' || !shown) {
-
-	     $$.cookie('OMAds_shown', 1);
+	     $$.cookie('OMAds_shown', now);
 
 
 	     $$('body').append(ad);
