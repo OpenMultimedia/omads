@@ -54,7 +54,7 @@ OMAds.insert_banner = function(options) {
     var shown = $$.cookie('OMAds_shown'),
         expires = 1800;
 
-    if (typeof shown == 'undefined' || !shown || ((Number(shown)+expires) > now)) {
+    if (typeof shown == 'undefined' || !shown || ((Number(shown)+expires) < now)) {
 
 	     $$.cookie('OMAds_shown', now);
 
