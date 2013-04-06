@@ -25,7 +25,7 @@ a.display));else{a.d.data.hide().remove();b.replaceWith(a.d.orig)}}else a.d.data
 
 
 
-var css;
+var css;	
 css = "#simplemodal-caption {font-size:12px;background-color:#000; color:#fff; text-align:center; padding:5px;}";
 css += "#simplemodal-overlay {background-color:#000; cursor:wait;}";
 css += "#simplemodal-container {width:800px; height:600px; border:4px solid #444; padding:0px;}";
@@ -54,7 +54,7 @@ OMAds.insert_banner = function(options) {
     var shown = $$.cookie('OMAds_shown'),
         expires = 1800;
 
-    if (typeof shown == 'undefined' || !shown || ((Number(shown)+expires) < now)) {
+    if (typeof shown == 'undefined' || !shown || ((Number(shown)+expires) > now)) {
 
 	     $$.cookie('OMAds_shown', now);
 
